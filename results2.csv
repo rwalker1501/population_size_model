@@ -1,0 +1,39 @@
+,Name,Latitude,Longitude,Earliest age in sample,Latest age in sample,Modern Country,Direct / indirect,Exact Age / Minimum Age / Max Age,Calibrated,Kind,Figurative,Nearest hexagon,Nearest longitude,Nearest latitude,Number of cells within vicinity,Adjacent cell count,Adjacent population,Product-based cell count,Product-based population,Gravity-based cell count,Gravity-based population
+0,"Abri Castanet, Dordogne, France",44.999272,1.101261,37205,36385,France,Indirect,Minimum Age,No,Petroglyphs,Yes,12010,30.361,30.361,0,1,0,1,0,1,0
+1,"Altamira, Spain
+",43.377452000000005,-4.122347,36160,2850,Spain,Direct,Exact Age,Unknown,"Petroglyphs
+Decorated ceiling in cave","Yes, not all. One is linear red line.
+
+",2575,150.36,150.36,0,1,5340,1,5340,1,5340
+2,"Altxerri B, Spain",43.2369,-2.148555,39479,34689,Spain,Indirect,Minimum age,Yes,Painting,Yes,11085,151.18,151.18,0,1,0,1,0,1,0
+3,"Anta de Serramo, Vimianzo, A Coruña, Galicia, Spain ",43.110048,-9.03242,6950,6950,Spain,Direct,Exact age,Yes,Painting,,740,148.85,148.85,0,1,4252,1,4252,1,4252
+4,"Casota do Paramo, A Coruna, Spain",42.704644,-8.930863,5400,5400,Spain,Direct,Maximum Age,Yes,Painting,No,2083,149.3,149.3,0,1,5396,1,5396,1,5396
+5,"Cave of Cougnac, France",44.756986,1.3759569999999999,24000,24000,France,Direct,Exact Age,Unknown,Painting,Yes (2 deers),8744,30.195,30.195,0,1,5334,1,5334,1,5334
+6,"Cave of El Castillo, Spain",43.292367999999996,-3.965576,41400,22880,Spain,Direct,Minimum Age,Yes,"Pike: Painting
+","Pike: Some, most are disk-shapes
+Valladas 2001: Yes
+Valladas 1992: Yes",2247,150.48,150.48,0,1,5214,1,5214,1,5214
+7,"Cave of Niaux, France",42.820098,1.593487,12890,12890,France,Direct,Exact age,Unknown. Likely no.,Painting,Yes,7010,28.18,28.18,0,1,5096,1,5096,1,5096
+8,"Chauvet-Pont-d'Arc Cave, France",44.387244,4.415865,32410,30340,France,Direct,Exact age,Unknown.,Painting,Yes,12287,30.808,30.808,0,1,4688,1,4688,1,4688
+9,"Cosquer cave, Calanque de Morgiou, France",43.210931,5.445896,28370,17800,France,Direct,Exact Age,No,Painting,Yes,6565,29.954,29.954,0,1,5244,1,5244,1,5244
+10,"Coto dos Muros, Baixo Mino, Northwest Iberia",41.999517,-8.770147,6340,4020,Spain,Direct,Maximum Age,Yes,Painting,,601,150.03,150.03,0,1,5354,1,5354,1,5354
+11,"Covaciella, Spain",43.318232,-4.875262,17113,16881,Spain,Yes,Exact age,Yes,Painting,Yes,602,150.12,150.12,0,1,5002,1,5002,1,5002
+12,"Fuente de el Salin, Muñorrodero Spain",43.364429,-4.482981,22340,22340,Spain,Indirect,Minimum age,Unknown,Painting,,1196,150.22,150.22,0,1,3152,1,3152,1,3152
+13,"Gargas, France",43.903220000000005,5.357387999999999,26860,26860,France,Indirect,Minimum age,Unknown,"Hand stencils, engravings",Yes,9521,30.636,30.636,0,1,5364,1,5364,1,5364
+14,"Grande Grotte, Arcy-sur-Cure, France",47.591452000000004,3.7663919999999997,45503,29172,France,Indirect,,Yes,Painting,,9527,34.267,34.267,0,1,5230,1,5230,1,5230
+15,"Grotte d’Aldene, Cesseras, France",43.353896999999996,2.698387,30260,30260,France,Indirect,,Unknown,Engravings,,12545,29.13,29.13,0,1,0,1,0,1,0
+16,"Grotte de Cussac, Dordogne River Valley, France",44.829444,0.847778,29209,3426,France,Indirect,Mixed,Unknown,Painting,Yes,9255,30.073,30.073,0,1,5218,1,5218,1,5218
+17,"La Garma, Cantabria, Spain",43.151944,-3.896389,16875,16875,Spain,Direct,Exact age,Yes,Paintings,Yes,744,150.69,150.69,0,1,5058,1,5058,1,5058
+18,"La Pileta, Spain",36.691297,-5.2699,24228,24228,Spain,Direct,Exact age,Yes,Paintings,Yes,11352,155.92,155.92,0,1,0,1,0,1,0
+19,"La Tete du lion, France",45.777403,4.855214,26760,25996,France,Indirect,Minimum age,Yes,Paintings,,9524,32.482,32.482,0,1,5328,1,5328,1,5328
+20,"Labastide, France",43.035546000000004,0.352267,17476,484,France,Direct,Exact age,Yes,Paintings,Yes,9792,27.962,27.962,0,1,1950,1,1950,1,1950
+21,"Lascaux Cave, France",45.053919,1.167651,22723,18848,France,Indirect,Minimum age,Yes,Paintings,Yes,7250,30.446,30.446,0,1,5128,1,5128,1,5128
+22,"Nerja, Spain",36.785916,-3.8044830000000003,23821,23821,Spain,Indirect,Minimum age,Yes,Drawings and torch rubbings,,9410,156.48,156.48,0,1,1924,1,1924,1,1924
+23,"Ojo Guareña, Burgos, Spain",43.034337,-3.6645199999999996,11540,10950,Spain,Direct,Exact age,Unknown,Paintings,Yes,746,150.86,150.86,0,1,5476,1,5476,1,5476
+24,"Pech Merle, France",44.507308,1.64408,24700,24700,France,Direct,Exact age,Unknown (Likely no),Painting,Yes ,9520,30.005,30.005,0,1,5138,1,5138,1,5138
+25,Pedra Cuberta,43.089554,-8.984605,5775,5620,Spain,Direct,Exact,Yes,Painting,Yes,461,148.89,148.89,0,1,5370,1,5370,1,5370
+26,"Pedra da Moura, Vimianzo, A Coruña, Spain",43.081351,-8.977859,5745,5745,Spain,Direct,Exact age,Yes,Painting,,461,148.89,148.89,0,1,5204,1,5204,1,5204
+27,"Pondra, Cantabria, Spain",43.266475,-3.423179,22000,22000,Spain,Indirect,Minimum age,Unknown,Painting,Yes,10240,150.71,150.71,0,1,0,1,0,1,0
+28,"Tito Bustillo Cave, Spain",43.460706,-5.067392,36200,29650,Spain,Indirect,Mixed,Yes,Paintings,Yes,600,149.95,149.95,0,1,4928,1,4928,1,4928
+29,"Urdiales, Spain",43.368821999999994,-3.215635,15223,15223,Spain,Direct,Exact age,Yes,Painting,Yes,744,150.69,150.69,0,1,4872,1,4872,1,4872
+30,"Villars, France",45.442277000000004,0.785135,21735,17473,France,Direct,Exact age,Yes,Drawings and torch rubbings,No,12812,30.778,30.778,0,1,0,1,0,1,0

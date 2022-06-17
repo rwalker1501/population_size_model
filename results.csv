@@ -1,0 +1,3 @@
+,Name,Latitude,Longitude,Earliest age in sample,Latest age in sample,Nearest hexagon,Nearest longitude,Nearest latitude,Number of cells within vicinity,Adjacent cell count,Adjacent population,Product-based cell count,Product-based population,Gravity-based cell count,Gravity-based population
+0,"Abri Castanet, Dordogne, France",44.999272,1.101261,37205,36385,12010,30.361,30.361,0,1,0,1,0,1,0
+1,Test,43.377452000000005,-4.122347,36160,2850,2575,150.36,150.36,0,1,5340,1,5340,1,5340
