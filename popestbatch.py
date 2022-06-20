@@ -56,16 +56,16 @@ population_data=load_population_data_source(base_path, population_data_name)
 # latfile = "DATA/lat.txt"
 # =============================================================================
 
+adjfile = "population_data/all-adj.txt"
+
 print()
 print("Threshold file:", threshfile)
 params = pd.read_csv(threshfile)
 
-vicinitythresh = params['vicinity'][threshindex]
 adjthresh = params['adjacency'][threshindex]
 productthresh = params['product'][threshindex]
 gravitythresh = params['gravity'][threshindex]
 
-print("Vicinity threshold (km)", vicinitythresh)
 print("Adjacency threshold (km)", adjthresh)
 print("Product threshold (population^2)", productthresh)
 print("Gravity threshold (population^2/km^2)", gravitythresh)
@@ -80,7 +80,7 @@ print()
 # =============================================================================
 
 lon=population_data.lon_array
-lat=population_data.lon_array
+lat=population_data.lat_array
 densities=population_data.density_array
 print("Target file:", targetfile)
 targets = pd.read_csv(targetfile)
@@ -88,7 +88,6 @@ targets = pd.read_csv(targetfile)
 targets["Nearest hexagon"] = 0
 targets["Nearest longitude"] = 0.0
 targets["Nearest latitude"] = 0.0
-targets["Number of cells within vicinity"] = 0
 targets["Adjacent cell count"] = 0
 targets["Adjacent population"] = 0
 targets["Product-based cell count"] = 0
@@ -105,9 +104,8 @@ for i in targets.index:
 
     nearest = nearestnode(centerlon,centerlat,lon,lat)
     
-    count = countwithinvicinity(lon,lat,centerlon,centerlat,vicinitythresh)
-
-    preedges = makeadj(lon,lat,adjthresh,centerlon,centerlat,vicinitythresh)
+#   preedges = makeadj(lon,lat,adjthresh,centerlon,centerlat)
+    preedges = loadadjfromfile(adjfile)
 
     clustersize1,popsize1 = popbyadj(lon,lat,nearest,kya,preedges,densities)
 
@@ -118,7 +116,6 @@ for i in targets.index:
     targets.at[i,"Nearest hexagon"] = nearest
     targets.at[i,"Nearest longitude"] = lon[nearest]
     targets.at[i,"Nearest latitude"] = lat[nearest]
-    targets.at[i,"Number of cells within vicinity"] = count
     targets.at[i,"Adjacent cell count"] = clustersize1
     targets.at[i,"Adjacent population"] = popsize1
     targets.at[i,"Product-based cell count"] = clustersize2

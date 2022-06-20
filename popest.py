@@ -38,10 +38,10 @@ population_data=load_population_data_source(base_path, population_data_name)
 
 lonfile = "DATA/long.txt"
 latfile = "DATA/lat.txt"
+adjfile = "population_data/all-adj.txt"
 centerlon = 355.877
 centerlat = 43.377
 adjthresh = 150
-vicinitythresh = 300
 kya = 36
 productthresh = 20000000
 if (len(sys.argv)>1):
@@ -51,20 +51,17 @@ if (len(sys.argv)>2):
 if (len(sys.argv)>3):
   kya = int(sys.argv[3])
 if (len(sys.argv)>4):
-   vicinitythresh= int(sys.argv[4])
+  adjthresh = int(sys.argv[4])
 if (len(sys.argv)>5):
-  adjthresh = int(sys.argv[5])
-if (len(sys.argv)>6):
-  productthresh = int(sys.argv[6])
+  productthresh = int(sys.argv[5])
 gravitythresh = productthresh/(100*100) # derived gravity threshold from product threshold
-if (len(sys.argv)>7):
-  gravitythresh = int(sys.argv[7])
+if (len(sys.argv)>6):
+  gravitythresh = int(sys.argv[6])
 
 print("Parameters")
 print(" Target", centerlon, centerlat)
 print(" 1000s years ago (kYA)", kya)
 print(" ---")
-print(" Vicinity threshold (km)", vicinitythresh)
 print(" Adjacency threshold (km)", adjthresh)
 print(" Product threshold (population^2)", productthresh)
 print(" Gravity threshold (population^2/km^2)", gravitythresh)
@@ -80,15 +77,13 @@ print()
 
 
 lon=population_data.lon_array
-lat=population_data.lon_array
+lat=population_data.lat_array
 densities=population_data.density_array
 nearest = nearestnode(centerlon,centerlat,lon,lat)
 print(nearest, ":", lon[nearest],lat[nearest], "is the nearest node to target", centerlon, centerlat)
 
-count = countwithinvicinity(lon,lat,centerlon,centerlat,vicinitythresh)
-print("Number of nodes within vicinity", count)
-
-preedges = makeadj(lon,lat,adjthresh,centerlon,centerlat,vicinitythresh)
+#preedges = makeadj(lon,lat,adjthresh,centerlon,centerlat)
+preedges = loadadjfromfile(adjfile)
 
 clustersize1,popsize1 = popbyadj(lon,lat,nearest,kya,preedges,densities)
 print("Adjacency Results")

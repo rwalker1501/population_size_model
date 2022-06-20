@@ -18,37 +18,23 @@ def angle(lon1,lat1,lon2,lat2):
   bearing = atan2(sin(dlon)*cos(lat2),
                   cos(lat1)*sin(lat2)-sin(lat1)*cos(lat2)*cos(dlon))
   return (degrees(bearing) + 360) % 360
-      
-def countwithinvicinity(lon, lat, centerlon, centerlat, vicinitythresh = 1000):
-    count = 0        
-    n = len(lon)
-    for i in range(n):
-      x1 = lon[i]
-      y1 = lat[i]
-      d1 = dist(x1,y1,centerlon,centerlat)
-      if d1 < vicinitythresh:
-         count = count+1             
-    return count
 
 def makeadj(lon, lat, adjthresh = 150,
-            centerlon = 355.877, centerlat = 43.377, vicinitythresh = 1000):
+            centerlon = 355.877, centerlat = 43.377):
             
     edges = []
     n = len(lon)
     for i in range(n):
       x1 = lon[i]
       y1 = lat[i]
-      d1 = dist(x1,y1,centerlon,centerlat)
-      if d1 < vicinitythresh:
-        for j in range(n):
-          if (i != j):
-            x2 = lon[j]
-            y2 = lat[j]
-            d2 = dist(x2,y2,centerlon,centerlat)
-            if d2 < vicinitythresh:
-               d = dist(x1,y1,x2,y2)
-               if d < adjthresh:
-                 edges.append(str(i)+' '+str(j))
+      for j in range(n):
+        if (i != j):
+          x2 = lon[j]
+          y2 = lat[j]
+          d2 = dist(x2,y2,centerlon,centerlat)
+          d = dist(x1,y1,x2,y2)
+          if d < adjthresh:
+            edges.append(str(i)+' '+str(j))
                  
     return edges
 
@@ -57,7 +43,7 @@ def saveadj(edgesastext,outfile = "gui-adj.txt"):
     with open(outfile,'w') as f:
         for x in edgesastext:
            # print(>> f, x)
-           print(x, end="", file=f)
+           print(x, end="\n", file=f)
            
 def loadadjfromfile(adjfile = "out-adj.txt"):
     edges = []
@@ -98,7 +84,7 @@ def getcluster(adjlist, nearest):
     cluster = crawl(nearest,adjlist)
     return cluster
 
-def crawl(v,adjlist):
+def crawldfs(v,adjlist):
    global visited
    result = []
    if (not visited[v]):
@@ -106,6 +92,21 @@ def crawl(v,adjlist):
       result = result + [v]
       for j in adjlist[v]:
          result = result + crawl(j,adjlist)
+   return result
+
+def crawl(v,adjlist):
+   global visited
+   result = []
+   queue = [v]
+   visited[v] = True
+   while len(queue) > 0:
+      p = queue.pop(0);
+#     print(p,len(queue))
+      result = result + [p]
+      for j in adjlist[p]:
+         if (not visited[j]):
+            queue.append(j)
+            visited[j] = True
    return result
 
 def getclusterwithedges(adjlist, nearest):
@@ -163,8 +164,11 @@ def filterbygravity(alledges,lon,lat,kya,gravitythresh,densities):
         [i,j] = [int(y) for y in x.split(' ')]
         d = dist(lon[i],lat[i],lon[j],lat[j])
         sq = (snap[i-1]*snap[j-1])
-        if (sq/(d*d)) >= gravitythresh:
+        if d <= 0.01:
            newedges.append(x)
+        else:
+           if (sq/(d*d)) >= gravitythresh:
+              newedges.append(x)
 
     return newedges
 
