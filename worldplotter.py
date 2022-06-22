@@ -23,6 +23,7 @@ def plotworld(c1,c2,c3,lon,lat,filename,caption):
    plt.title(caption)
    plt.grid(True)
    plt.savefig(filename)
-
 #   plt.show()
+   plt.close()
+
 

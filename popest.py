@@ -101,5 +101,5 @@ print("Gravity Filter Results")
 print(" cluster size is", clustersize3)
 print(" population size is", popsize3)
 
-plotworld(cells1,cells2,cells3,lon,lat,"worldmap.png","world map")
+plotworld(cells1,cells2,cells3,lon,lat,"PLOTS/worldmap.png","world map")
 

@@ -9,6 +9,8 @@ from nvalslib import *
 from poplib2 import *
 from worldplotter import *
 
+plotsfolder = "PLOTS/"
+
 def load_population_data_source(base_path, population_data_name):
     
     pop_data_path = os.path.join(base_path, "population_data")
@@ -125,7 +127,7 @@ for i in targets.index:
     targets.at[i,"Gravity-based population"] = popsize3
 
     caption = targets['Name'][i]
-    filename = "world"+str(i)+".png"
+    filename = plotsfolder+"world"+str(i)+".png"
     plotworld(cells1,cells2,cells3,lon,lat,filename,caption)
 
 print()
