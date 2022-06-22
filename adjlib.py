@@ -84,16 +84,6 @@ def getcluster(adjlist, nearest):
     cluster = crawl(nearest,adjlist)
     return cluster
 
-def crawldfs(v,adjlist):
-   global visited
-   result = []
-   if (not visited[v]):
-      visited[v] = True
-      result = result + [v]
-      for j in adjlist[v]:
-         result = result + crawl(j,adjlist)
-   return result
-
 def crawl(v,adjlist):
    global visited
    result = []
@@ -115,27 +105,26 @@ def getclusterwithedges(adjlist, nearest):
     visited = []
     for i in range(n):
        visited.append(False)
-    cluster,clusteredges = crawlwithedges(-1,nearest,adjlist)
+    cluster,clusteredges = crawlwithedges(nearest,adjlist)
     return cluster, clusteredges
 
-def crawlwithedges(fromv,v,adjlist):
+def crawlwithedges(v,adjlist):
    global visited
    result = []
+   queue = [v]
+   visited[v] = True
    resultedges = []
-   if (visited[v]):
-      resultedges = resultedges + [str(fromv)+" "+str(v)]
-   else:
-      visited[v] = True
-      result = result + [v]
-      if fromv != -1:
-         resultedges = resultedges + [str(fromv)+" "+str(v)]
-      for j in adjlist[v]:
-         vv,ee = crawlwithedges(v,j,adjlist)
-         result = result + vv
-         resultedges = resultedges + ee
+   while len(queue) > 0:
+      p = queue.pop(0);
+#     print(p,len(queue))
+      result = result + [p]
+      for j in adjlist[p]:
+         if (not visited[j]):
+            queue.append(j)
+            visited[j] = True
+            resultedges = resultedges + [str(p)+" "+str(j)]
    return result,resultedges
-   
-   
+
 def filterbypopproduct(alledges,lon,lat,kya,productthresh,densities):
     
     kyarec = getkya(kya,kya,densities)    

@@ -6,6 +6,7 @@ from adjlib import *
 from nvalslib import *
 from poplib2 import popbyadj, popbyproduct,popbygravity
 from classes_module import Target, PopulationData
+from worldplotter import *
 
 def load_population_data_source(base_path, population_data_name):
     
@@ -85,18 +86,20 @@ print(nearest, ":", lon[nearest],lat[nearest], "is the nearest node to target", 
 #preedges = makeadj(lon,lat,adjthresh,centerlon,centerlat)
 preedges = loadadjfromfile(adjfile)
 
-clustersize1,popsize1 = popbyadj(lon,lat,nearest,kya,preedges,densities)
+clustersize1,popsize1,cells1 = popbyadj(lon,lat,nearest,kya,preedges,densities)
 print("Adjacency Results")
 print(" cluster size is", clustersize1)
 print(" population size is", popsize1)
 
-clustersize2,popsize2 = popbyproduct(lon,lat,nearest,kya,preedges,productthresh,densities)
+clustersize2,popsize2,cells2 = popbyproduct(lon,lat,nearest,kya,preedges,productthresh,densities)
 print("Product Filter Results")
 print(" cluster size is", clustersize2)
 print(" population size is", popsize2)
 
-clustersize3,popsize3 = popbygravity(lon,lat,nearest,kya,preedges,gravitythresh,densities)
+clustersize3,popsize3,cells3 = popbygravity(lon,lat,nearest,kya,preedges,gravitythresh,densities)
 print("Gravity Filter Results")
 print(" cluster size is", clustersize3)
 print(" population size is", popsize3)
+
+plotworld(cells1,cells2,cells3,lon,lat,"worldmap.png","world map")
 

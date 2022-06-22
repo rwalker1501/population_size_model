@@ -7,6 +7,7 @@ import json
 from adjlib import *
 from nvalslib import *
 from poplib2 import *
+from worldplotter import *
 
 def load_population_data_source(base_path, population_data_name):
     
@@ -107,11 +108,11 @@ for i in targets.index:
 #   preedges = makeadj(lon,lat,adjthresh,centerlon,centerlat)
     preedges = loadadjfromfile(adjfile)
 
-    clustersize1,popsize1 = popbyadj(lon,lat,nearest,kya,preedges,densities)
+    clustersize1,popsize1,cells1 = popbyadj(lon,lat,nearest,kya,preedges,densities)
 
-    clustersize2,popsize2 = popbyproduct(lon,lat,nearest,kya,preedges,productthresh,densities)
+    clustersize2,popsize2,cells2 = popbyproduct(lon,lat,nearest,kya,preedges,productthresh,densities)
 
-    clustersize3,popsize3 = popbygravity(lon,lat,nearest,kya,preedges,gravitythresh,densities)
+    clustersize3,popsize3,cells3 = popbygravity(lon,lat,nearest,kya,preedges,gravitythresh,densities)
 
     targets.at[i,"Nearest hexagon"] = nearest
     targets.at[i,"Nearest longitude"] = lon[nearest]
@@ -122,6 +123,10 @@ for i in targets.index:
     targets.at[i,"Product-based population"] = popsize2
     targets.at[i,"Gravity-based cell count"] = clustersize3
     targets.at[i,"Gravity-based population"] = popsize3
+
+    caption = targets['Name'][i]
+    filename = "world"+str(i)+".png"
+    plotworld(cells1,cells2,cells3,lon,lat,filename,caption)
 
 print()
 print("Results written to file:", outfile)
