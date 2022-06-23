@@ -129,13 +129,21 @@ def filterbypopproduct(alledges,lon,lat,kya,productthresh,densities):
     
     kyarec = getkya(kya,kya,densities)    
     snap = [int(x) for x in kyarec[0]]
+    # following instruction doesn't seem to do anything
     kya = snap[0]*25/1000.0
 
     # edges = loadadjfromfile("out-adj.txt")
     newedges = []
     for x in alledges:
         [i,j] = [int(y) for y in x.split(' ')]
-        sq = snap[i-1]*snap[j-1]
+  #----------      
+  #This was snap[i-1]*snap[j-1]  - not sure why. In old program
+  # snap[0] was kya (in lines) and needed to be cut out.
+  # So first column with a density should have been snap[i+1]
+  # Now I think it should be snap [i]
+  # But not really confident
+  # -----------------
+        sq = snap[i]*snap[j]
         if sq >= productthresh:
            newedges.append(x)
 
