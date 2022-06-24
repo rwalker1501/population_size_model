@@ -37,7 +37,7 @@ def load_population_data_source(base_path, population_data_name):
 
 
 targetfile = "testdata.csv"
-outfile = "results.csv" 
+outfile = "results_new_th_5m.csv" 
 threshfile = "thresholds.csv"
 threshindex = 0
 
@@ -98,8 +98,12 @@ targets["Product-based population"] = 0
 targets["Gravity-based cell count"] = 0
 targets["Gravity-based population"] = 0
     
-for i in targets.index:    
+for i in targets.index:
+#new instruction
+     
     centerlon = targets['Longitude'][i]
+    if centerlon<0:
+        centerlon=centerlon+360
     centerlat = targets['Latitude'][i]
     kya = targets['Earliest age in sample'][i]/1000
     

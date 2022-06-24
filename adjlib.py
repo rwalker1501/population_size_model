@@ -109,7 +109,7 @@ def getclusterwithedges(adjlist, nearest):
             resultedges = resultedges + [str(p)+" "+str(j)]
    return result,resultedges
 
-def filterbypopproduct(alledges,lon,lat,kya,productthresh,densities):
+def filterbypopproduct(alledges,lon,lat,kya,productthresh,densities, nearest,mean_pop):
     
     kyarec = getkya(kya,kya,densities)    
     snap = [int(x) for x in kyarec[0]]
@@ -117,6 +117,8 @@ def filterbypopproduct(alledges,lon,lat,kya,productthresh,densities):
     newedges = []
     for x in alledges:
         [i,j] = [int(y) for y in x.split(' ')]
+        if i==nearest and snap[i]==0:
+            snap[i]=mean_pop
         sq = snap[i]*snap[j]
         if sq >= productthresh:
            newedges.append(x)
@@ -141,4 +143,16 @@ def filterbygravity(alledges,lon,lat,kya,gravitythresh,densities):
               newedges.append(x)
 
     return newedges
+
+def gettrueadjacents (alledges, nearest):
+    #gets all edges where origin = nearest)
+    immediates=[]
+    for x in alledges:
+        [i,j] = [int(y) for y in x.split(' ')]
+        if i==nearest:
+            immediates.append(j)
+    return(immediates)
+        
+    
+    
 

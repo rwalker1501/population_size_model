@@ -90,6 +90,9 @@ targets["Gravity-based cell count"] = 0
 targets["Gravity-based population"] = 0
     
 for i in targets.index:    
+    #new instruction
+    if  targets['Longitude'][i]<0:
+      targets['Longitude'][i]=targets['Longitude'][i]+360 
     centerlon = targets['Longitude'][i]
     centerlat = targets['Latitude'][i]
     earliestage = targets['Earliest age in sample'][i]

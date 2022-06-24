@@ -1,3 +1,2 @@
 ,Name,Latitude,Longitude,Earliest age in sample,Latest age in sample,Nearest hexagon,Nearest longitude,Nearest latitude,Adjacent cell count,Adjacent population,Product-based cell count,Product-based population,Gravity-based cell count,Gravity-based population
-0,"Abri Castanet, Dordogne, France",44.999272,1.101261,37205,36385,6738,0.72878,44.7,13251,23524274,74,347572,3,14730
-1,Test,43.377452000000005,-4.122347,36160,2850,5864,355.7222,43.664,13251,23281334,65,304992,1,4872
+0,"Casota do Paramo, A Coruna, Spain",42.704644,-8.930863,5400,5400,5031,350.9371,42.453,13251,36033640,1,0,1,0
