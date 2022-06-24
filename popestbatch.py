@@ -37,7 +37,7 @@ def load_population_data_source(base_path, population_data_name):
 
 
 targetfile = "testdata.csv"
-outfile = "results_new_th_5m.csv" 
+outfile = "results_no_eq_th_12_5m.csv" 
 threshfile = "thresholds.csv"
 threshindex = 0
 
