@@ -74,21 +74,14 @@ def makeadjlist(numnodes,edgesastext):
        adjlist[i].append(j)
     return adjlist
 
-visited = []
 def getcluster(adjlist, nearest):
-    global visited
-    n = len(adjlist)
-    visited = []
-    for i in range(n):
-       visited.append(False)
-    cluster = crawl(nearest,adjlist)
-    return cluster
-
-def crawl(v,adjlist):
-   global visited
    result = []
-   queue = [v]
-   visited[v] = True
+   queue = [nearest]
+   n = len(adjlist)
+   visited = []
+   for i in range(n):
+      visited.append(False)
+   visited[nearest] = True
    while len(queue) > 0:
       p = queue.pop(0);
 #     print(p,len(queue))
@@ -100,19 +93,10 @@ def crawl(v,adjlist):
    return result
 
 def getclusterwithedges(adjlist, nearest):
-    global visited
-    n = len(adjlist)
-    visited = []
-    for i in range(n):
-       visited.append(False)
-    cluster,clusteredges = crawlwithedges(nearest,adjlist)
-    return cluster, clusteredges
-
-def crawlwithedges(v,adjlist):
    global visited
    result = []
-   queue = [v]
-   visited[v] = True
+   queue = [nearest]
+   visited[nearest] = True
    resultedges = []
    while len(queue) > 0:
       p = queue.pop(0);
@@ -129,13 +113,11 @@ def filterbypopproduct(alledges,lon,lat,kya,productthresh,densities):
     
     kyarec = getkya(kya,kya,densities)    
     snap = [int(x) for x in kyarec[0]]
-    kya = snap[0]*25/1000.0
 
-    # edges = loadadjfromfile("out-adj.txt")
     newedges = []
     for x in alledges:
         [i,j] = [int(y) for y in x.split(' ')]
-        sq = snap[i-1]*snap[j-1]
+        sq = snap[i]*snap[j]
         if sq >= productthresh:
            newedges.append(x)
 
@@ -147,12 +129,11 @@ def filterbygravity(alledges,lon,lat,kya,gravitythresh,densities):
     snap = [int(x) for x in kyarec[0]]
     kya = snap[0]*25/1000.0
 
-    # edges = loadadjfromfile("out-adj.txt")
     newedges = []
     for x in alledges:
         [i,j] = [int(y) for y in x.split(' ')]
         d = dist(lon[i],lat[i],lon[j],lat[j])
-        sq = (snap[i-1]*snap[j-1])
+        sq = (snap[i]*snap[j])
         if d <= 0.01:
            newedges.append(x)
         else:
