@@ -125,6 +125,19 @@ def filterbypopproduct(alledges,lon,lat,kya,productthresh,densities, nearest,mea
 
     return newedges
 
+def filterbypopproductindex(alledges,lon,lat,ix,productthresh,densities):
+    
+    snap = densities[ix]
+
+    newedges = []
+    for x in alledges:
+        [i,j] = [int(y) for y in x.split(' ')]
+        sq = snap[i]*snap[j]
+        if sq >= productthresh:
+           newedges.append(x)
+
+    return newedges
+
 def filterbygravity(alledges,lon,lat,kya,gravitythresh,densities):
     
     kyarec = getkya(kya,kya,densities)    

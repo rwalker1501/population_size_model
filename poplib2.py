@@ -33,6 +33,15 @@ def popbyproduct(lon,lat,nearest,kya,preedges,productthresh,densities):
     clustersize = len(clusterindexes)
     return clustersize,popsize,clusterindexes
 
+def popbyproductonetimeindex(lon,lat,nearest,ix,preedges,productthresh,densities):
+    edges = filterbypopproductindex(preedges,lon,lat,ix,productthresh,densities)
+    # print(" Number of connections after product filter", len(edges))
+    adjlist = makeadjlist(len(lon),edges)
+    clusterindexes = getcluster(adjlist,nearest)
+    poparray = densities[ix]
+    popsize = sumpop(poparray,clusterindexes)
+    clustersize = len(clusterindexes)
+    return clustersize,popsize,clusterindexes
 
 def popbygravity(lon,lat,nearest,kya,preedges,gravitythresh,densities):
     edges = filterbygravity(preedges,lon,lat,kya,gravitythresh,densities)
