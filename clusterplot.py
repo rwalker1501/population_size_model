@@ -62,7 +62,7 @@ for ix in range(first,last):
    print(ix,"(",ya,"years ago ): ",end='')
    print(" cluster size =", clustersize, end='')
    print(" and population size =", popsize)
-   caption = str(ya) + " years ago (" + str(clustersize) + " clusters)"
+   caption = str(ya) + " years ago (" + str(clustersize) + " cells)"
    ix0 = f'{counter:02d}'+'-'
    filename = "PLOTS/world"+ix0+str(ya)+"ya.png"
    images.append(filename)
