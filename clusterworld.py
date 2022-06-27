@@ -45,8 +45,8 @@ population_data=load_population_data_source(base_path, population_data_name)
 
 adjfile = "population_data/all-adj.txt"
 adjthresh = 150
-fromkya = 36
-tokya = 35.6
+fromkya = 50
+tokya = 0
 productthresh = 15000000
 if (len(sys.argv)>1):
   productthresh = int(sys.argv[1])
@@ -77,7 +77,7 @@ print("time indexes:",first,last)
 
 counter = 1
 images = []
-for ix in range(first,last):
+for ix in range(first,last,40):
    ya = (numquarters - ix)*25
    print(ix,"(",ya,"years ago )")
    clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities)
