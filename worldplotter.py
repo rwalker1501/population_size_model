@@ -6,19 +6,19 @@ from moviepy.editor import *
 
 def plotworld(c1,c2,c3,lon,lat,filename,caption):
    plt.figure()
-   plt.scatter(lon, lat, cmap=plt.cm.Blues)
+   plt.scatter(lon, lat, color='blue')
    clon = []
    clat = []
    for i in c2:
       clon.append(lon[i])
       clat.append(lat[i])
-   plt.scatter(clon, clat, cmap=plt.cm.Reds)
+   plt.scatter(clon, clat, color='red')
    clon = []
    clat = []
    for i in c3:
       clon.append(lon[i])
       clat.append(lat[i])
-   plt.scatter(clon, clat, cmap=plt.cm.Greens)
+   plt.scatter(clon, clat, color='green')
    plt.xlabel('longitude')
    plt.ylabel('latitude')
    plt.title(caption)
@@ -27,16 +27,34 @@ def plotworld(c1,c2,c3,lon,lat,filename,caption):
 #   plt.show()
    plt.close()
 
-
 def plotcluster(c,lon,lat,filename,caption):
    plt.figure()
-   plt.scatter(lon, lat, cmap=plt.cm.Blues)
+   plt.scatter(lon, lat, color='blue')
    clon = []
    clat = []
    for i in c:
       clon.append(lon[i])
       clat.append(lat[i])
-   plt.scatter(clon, clat, cmap=plt.cm.Reds)
+   plt.scatter(clon, clat, color='red')
+   plt.xlabel('longitude')
+   plt.ylabel('latitude')
+   plt.title(caption)
+   plt.grid(True)
+   plt.savefig(filename)
+#   plt.show()
+   plt.close()
+
+def plotworldclusters(clusters,lon,lat,filename,caption):
+   plt.figure()
+   plt.scatter(lon, lat, color='blue') # default color
+   for c in clusters:
+      if len(c) > 1: # plot only for non-single-cell clusters
+         clon = []
+         clat = []
+         for i in c:
+            clon.append(lon[i])
+            clat.append(lat[i])
+         plt.scatter(clon, clat)
    plt.xlabel('longitude')
    plt.ylabel('latitude')
    plt.title(caption)
