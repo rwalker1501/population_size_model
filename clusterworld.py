@@ -45,7 +45,7 @@ population_data=load_population_data_source(base_path, population_data_name)
 
 adjfile = "population_data/all-adj.txt"
 adjthresh = 150
-fromkya = 50
+fromkya = 120
 tokya = 0
 productthresh = 15000000
 if (len(sys.argv)>1):
