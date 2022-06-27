@@ -14,11 +14,12 @@ population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjfile = "population_data/all-adj.txt"
-centerlon = 355.877
-centerlat = 43.377
+#testing for Chauvet - v old french inland site
+centerlon = 4.41
+centerlat = 44.387
 adjthresh = 150
-fromkya = 36
-tokya = 35.6
+fromkya = 50
+tokya = 0
 productthresh = 10000000
 if (len(sys.argv)>1):
   centerlon = float(sys.argv[1])
@@ -51,11 +52,11 @@ numquarters = 6084
 first = int(numquarters - fromkya*40)
 last = int(numquarters - tokya*40)
 
-print("time indexes:",first,last)
+print("time indexes:",first,last)  #This gives us snapshots at 1000y intervals
 
 counter = 1
 images = []
-for ix in range(first,last):
+for ix in range(first,last,40):
    clustersize,popsize,cells = popbyproductonetimeindex(lon,lat,nearest,ix,
                 preedges,productthresh,densities)
    ya = (numquarters - ix)*25
