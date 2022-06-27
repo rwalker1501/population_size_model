@@ -14,13 +14,13 @@ population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjfile = "population_data/all-adj.txt"
-#testing for Chauvet - v old french inland site
-centerlon = 4.41
-centerlat = 44.387
+#testing for Bush turkey australia
+centerlat = -23.96
+centerlon = 122.97
 adjthresh = 150
 fromkya = 50
 tokya = 0
-productthresh = 10000000
+productthresh = 5000000
 if (len(sys.argv)>1):
   centerlon = float(sys.argv[1])
 if (len(sys.argv)>2):
