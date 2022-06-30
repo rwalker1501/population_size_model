@@ -6,19 +6,19 @@ from moviepy.editor import *
 
 def plotworld(c1,c2,c3,lon,lat,filename,caption):
    plt.figure()
-   plt.scatter(lon, lat, color='blue')
+   plt.scatter(lon, lat, s=1, color='blue')
    clon = []
    clat = []
    for i in c2:
       clon.append(lon[i])
       clat.append(lat[i])
-   plt.scatter(clon, clat, color='red')
+   plt.scatter(clon, clat, s=1, color='red')
    clon = []
    clat = []
    for i in c3:
       clon.append(lon[i])
       clat.append(lat[i])
-   plt.scatter(clon, clat, color='green')
+   plt.scatter(clon, clat, s=1, color='green')
    plt.xlabel('longitude')
    plt.ylabel('latitude')
    plt.title(caption)
@@ -29,13 +29,13 @@ def plotworld(c1,c2,c3,lon,lat,filename,caption):
 
 def plotcluster(c,lon,lat,filename,caption):
    plt.figure()
-   plt.scatter(lon, lat, color='blue')
+   plt.scatter(lon, lat, s=1, color='blue')
    clon = []
    clat = []
    for i in c:
       clon.append(lon[i])
       clat.append(lat[i])
-   plt.scatter(clon, clat, color='red')
+   plt.scatter(clon, clat, s=1, color='red')
    plt.xlabel('longitude')
    plt.ylabel('latitude')
    plt.title(caption)
@@ -49,7 +49,7 @@ def plotworldclusters(clusters,colors,lon,lat,filename,caption):
             'forestgreen','teal','purple','coral','lawngreen','pink']
    availcolors = len(clist)
    plt.figure()
-   plt.scatter(lon, lat, color='blue') # default color
+   plt.scatter(lon, lat, s=1, color='blue') # default color
    cycle = 0
    n = len(clusters)
    for i in range(n):
@@ -61,7 +61,7 @@ def plotworldclusters(clusters,colors,lon,lat,filename,caption):
          for i in c:
             clon.append(lon[i])
             clat.append(lat[i])
-         plt.scatter(clon, clat, color = clist[clustercolor % availcolors])
+         plt.scatter(clon, clat, s=1, color = clist[clustercolor % availcolors])
          cycle = cycle + 1
    plt.xlabel('longitude')
    plt.ylabel('latitude')
