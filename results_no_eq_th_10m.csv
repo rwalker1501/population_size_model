@@ -1,0 +1,138 @@
+,Name,Latitude,Longitude,Earliest age in sample,Latest age in sample,Modern Country,Direct / indirect,Exact Age / Minimum Age / Max Age,Calibrated,Kind,Figurative,Nearest hexagon,Nearest longitude,Nearest latitude,Adjacent cell count,Adjacent population,Product-based cell count,Product-based population,Gravity-based cell count,Gravity-based population
+0,"Abri Castanet, Dordogne, France",44.99927,1.1012600000000001,37205,36385,France,Indirect,Minimum Age,No,Petroglyphs,Yes,6738,0.72878,44.7,13251,23524274,390,1560820,2,10326
+1,"Altamira, Spain
+",43.37745,-4.12235,36160,2850,Spain,Direct,Exact Age,,"Petroglyphs
+Decorated ceiling in cave","Yes, not all. One is linear red line.
+
+",5864,355.7222,43.664,13251,23281334,386,1526494,1,4872
+2,"Altxerri B, Spain",43.2369,-2.14856,39479,34689,Spain,Indirect,Minimum age,Yes,Painting,Yes,6072,357.9052,42.738,13251,23346080,395,1555408,1,4524
+3,"Anbarndarr I. Australia/Anbarndarr II,  Australia/Gunbirdi I, Gunbirdi II, Gunbirdi III, Northern Territory Australia",-12.25521,133.64585,1704,111,Australia,Direct,Exact age,Yes,Beeswax,No,13461,133.75,-12.313,13251,35861594,468,2152020,92,486540
+4,"Anta de Serramo, Vimianzo, A Coruña, Galicia, Spain ",43.11005,-9.03242,6950,6950,Spain,Direct,Exact age,Yes,Painting,,5239,351.4548,43.465,13251,36656406,593,2583260,19,100670
+5,"Apollo 11 Cave, ǁKaras Region, Southwest Namibia",-26.842959999999998,17.29028,32332,26300,Namibia,Indirect,Minimum age,Unknown,Painted fragments,Yes,2361,17.578,-27.31,13251,22756856,1,2624,1,2624
+6,"ARN‐0063, Namarrgon Lightning Man, Northern Territory, Australia",-12.86552,132.814,1021,145,Australia,Direct,Exact age,Yes,Beeswax,Yes,13193,132.66,-12.526,13251,35901686,483,2185406,44,231204
+7,"Bald Rock, Wellington Range,Northern Territory Australia",-11.8,133.15,386,174,Australia,Direct,Exact age,Yes,Beeswax,,13460,133.21,-11.486,13251,35843994,481,2162814,16,84818
+8,"Baroalba Springs, Kakadu, Northern Territory, Australia",-12.677010000000001,132.4809,7876,7876,Australia,Indirect,Minimum age,Yes,Painting,-,13193,132.66,-12.526,13251,36692298,515,2279862,7,35964
+9,"Bhimbetka, India",22.93955,77.61243,5953,1100,India,Direct,Exact Age,No,Painting,Yes,5558,77.508,23.516,13251,36146438,901,4465462,504,2668974
+10,"Biggarsberg, South Africa",-26.28667,28.047220000000003,4050,970,South Africa,Direct,Exact age,Yes,Painting,,4257,27.677,-26.36,13251,36013448,1515,7630736,8,41884
+11,"Bighorn Basin, Wyoming and Montana, USA",44.37996,-108.03898999999998,6862,0,USA,Direct,Exact age,Yes,Petroglyphs,,13529,252.0,44.745,13251,36662132,2415,11710910,1,3504
+12,"Bindu, Kakadu, Northern Territory, Australia",-12.677010000000001,132.4809,183,117,Australia,Direct,Exact age,Yes,Beeswax dots and lines,No,13193,132.66,-12.526,13251,35854270,483,2169346,35,186214
+13,"Bush Turkey Dreaming Site, Western Australia",-23.96,122.97,60,60,Australia,Direct,Exact age,Yes,Painting,"Yes
+",9373,122.91,-23.741,13251,35857456,479,2154426,1,3732
+14,"Cape York, Australia",-10.7,142.51667,678,725,Australia,Direct,Exact age,Unknown,Painting,,1037,142.21,-10.366,13251,35907480,1,0,1,0
+15,"Casota do Paramo, A Coruña, Spain",42.704640000000005,-8.930860000000001,5400,5400,Spain,Direct,Maximum Age,Yes,Painting,No,5031,350.9371,42.453,13251,36033640,568,2440309,1,0
+16,"Cave of Beasts, Gilf Kebir, Egypt",23.44139,25.83972,8450,6350,Egypt,Indirect,,Unknown,Painting,Yes,10364,26.087,23.915,13251,36618756,1,0,1,0
+17,"Cave of Bees, Matopos, Zimbabwe",-20.55722,28.5125,12462,10500,South Africa,Direct,Exact age,Unknown,Painting,,5094,28.874,-20.477,13251,29354786,1558,7859220,9,47332
+18,"Cave of Cougnac, France",44.75699,1.37596,28007,24000,France,Direct,Exact Age,Unknown,Painting,Yes (2 deers),6738,0.72878,44.7,13251,22981268,127,533322,1,5026
+19,"Cave of El Castillo, Spain",43.29237,-3.96558,41400,22880,Spain,Direct,Minimum Age,Yes,"Pike: Painting
+","Pike: Some, most are disk-shapes
+Valladas 2001: Yes
+Valladas 1992: Yes",5864,355.7222,43.664,13251,23198916,397,1566252,1,4952
+20,"Cave of Niaux, France",42.8201,1.59349,15390,12890,France,Direct,Exact age,Unknown. Likely no.,Painting,Yes,6740,2.0948,42.738,13251,24962022,519,2125296,1,4318
+21,"Chauvet-Pont-d'Arc Cave, France",44.387240000000006,4.41587,36292,30340,France,Direct,Exact age,Unknown.,Painting,Yes,7445,5.0983,44.608,13251,23278248,349,1395442,1,3642
+22,"Chifubwa Stream Shelter, Zambia",-12.2,26.683329999999998,7227,6300,Zambia,Indirect,Minimum age,No,Engraving,No,5504,26.696,-12.662,13251,36646204,1548,7790574,672,3566312
+23,"Coliboaia Cave, Romania",46.53089,22.59733,35917,32000,Romania,Direct,Exact age,Unknown,Drawings,Yes,10915,22.768,46.689,13251,23277070,348,1389108,1,3764
+24,"Cosquer cave, Calanque de Morgiou, France",43.21093,5.4459,32276,21567,France,Direct,Exact Age,No,Painting,Yes,7446,5.702,43.612,13251,22772022,125,534182,1,5408
+25,"Coto dos Muros, Baixo Miño, Northwest Iberia",41.999520000000004,-8.77015,6340,4020,Spain,Direct,Maximum Age,Yes,Painting,,5031,350.9371,42.453,13251,36145152,579,2493466,1,0
+26,"Covaciella, Spain",43.31823,-4.87526,17113,16881,Spain,Yes,Exact age,Yes,Painting,Yes,5864,355.7222,43.664,13251,23814392,416,1645738,1,4736
+27,"Deighton Lady, Jowalbinna, Queensland Australia",-15.5333,144.7833,6483,2905,Australia,Indirect,Minimum age,Yes,Engraving,No,887,144.62,-15.526,13251,36665592,480,2089642,11,58298
+28,"Djarrng, West Arnhem Land, Northern Territory, Australia",-12.09183,132.8905,720,119,Australia,Direct,Exact age,Yes,Beeswax,Yes,13193,132.66,-12.526,13251,35912462,483,2191348,32,169956
+29,"Djulirri, Arnhem Land, Northerm Territory, Australia",-12.09183,132.8905,383,172,Australia,Direct,Exact age,Yes,Beeswax,"Yes
+",13193,132.66,-12.526,13251,35843994,481,2162814,16,84818
+30,"East Alligator River, Northern Territory, Australia",-12.52543,133.06016,4287,122,Australia,Direct,Exact age,Yes,Beeswax,No,13193,132.66,-12.526,13251,36017240,494,2242904,25,131864
+31,"Echidna's Rest, Queensland, Australia",-27.54235,153.07315,1291,Modern,Australia,Direct,Exact age,Yes,Drawings and engraving,No,1054,152.47,-27.692,13251,35878338,488,2205650,50,265080
+32,"El Hosh, Egypt (6km north of Gebel Silsila)",24.64261,32.92968,7550,2325,Egypt,Direct,Exact Age,Yes,Petroglyphs,Yes ,12297,32.896,24.333,13251,36689568,1,4,1,0
+33,"Emu Cave, New South Wales, Australia",-33.782340000000005,150.59043,1857,1857,Australia,Indirect,Minimum age,Yes,Engraving,Yes,749,151.15,-33.577,13251,35855970,470,2155724,56,294958
+34,"Fariseu, Coa Valley, Portugal",41.07999,-7.11178,18400,10800,Portugal,Indirect,Minimum age,No,Petroglyphs,Yes ,5033,352.636,40.587,13251,23180466,139,596194,3,15952
+35,"Fetra Hé Cave, Lifou Island, New Caledonia",-21.0385,167.24052,2570,983,New Caledonia,Direct,Exact age,Yes,Hand stencils,Some ,3905,166.82,-20.965,7,0,1,0,1,0
+36,"Forno dos muros, portugal",40.22424,-8.63622,5840,5505,Portugal,Direct,Exact age,Yes,Painting,,4824,351.3003,40.507,13251,36136604,574,2479602,3,16010
+37,"Foz Coa, Portugal",41.08225,-7.14036,1955,100,Portugal,Indirect,Minimum age,,Petroglyphs,Yes,5033,352.636,40.587,13251,35858752,568,2462934,5,26518
+38,"Fuente de el Salin, Muñorrodero Spain",43.36443,-4.48298,26596,22340,Spain,Indirect,Minimum age,Unknown,Painting,,5864,355.7222,43.664,13251,22793476,130,555826,1,4668
+39,"Gargas, France",43.903220000000005,5.3573900000000005,30988,26860,France,Indirect,Minimum age,Unknown,"Hand stencils, engravings",Yes,7446,5.702,43.612,13251,22763868,125,535490,1,5170
+40,"Giant Horse, Laura, Queensland, Australia",-15.5384,144.4566,474,474,Australia,Direct,Exact age,Yes,Painting,-,887,144.62,-15.526,13251,35843698,479,2155470,26,136696
+41,"Glen Canyon, South-central Utah, USA",37.386990000000004,-110.84281999999999,1080,675,USA,Indirect,,Unknown,Painting,Yes,13014,249.46,37.505,13251,35892942,2312,11199322,1,3384
+42,"Grande Grotte, Arcy-sur-Cure, France",47.59145,3.7663900000000003,45504,29173,France,Indirect,,Yes,Painting,,7442,3.1159,47.555,13251,19288412,379,1529228,1,4740
+43,"Grotta di Fumane, Italy",45.59248,10.90443,41000,41000,Italy,Indirect,Exact Age,Yes,Painting,Yes,8449,10.4,45.281,13251,23528390,244,909354,1,4396
+44,"Grotte d’Aldène, Cesseras, France",43.3539,2.6983900000000003,34263,30260,France,Indirect,,Unknown,Engravings,,6969,2.8524,43.701,13251,23362134,351,1404962,1,4650
+45,"Grotte de Cussac, Dordogne River Valley, France",44.829440000000005,0.84778,29209,3426,France,Indirect,Mixed,Unknown,Painting,Yes,6738,0.72878,44.7,13251,22558186,123,533694,1,4866
+46,"Gunbilngmurrung, Australia",-12.8,133.3,4297,140,Australia,Direct,Exact Age,Yes,Beeswax,Yes ,13194,133.2,-13.36,13251,36017240,494,2242904,25,131864
+47,"Hathitol, India",23.15224,79.92067,5526,2780,India,Direct,Exact Age,Unknown,Painting,Yes,5974,79.712,23.399,13251,36152330,902,4467602,502,2664188
+48,"Hay Cave, Queensland, Australia",-23.16733,150.490387,2484,1010,Australia,Direct,Exact age,No,Painting,No,1050,150.59,-23.174,13251,35664056,460,2072012,1,4370
+49,"Ignatievskaya Cave, Russia",54.8995,57.78159,8790,6925,Russia,Direct,Exact Age,Unknown,Painting,Yes,6363,57.46,55.328,13251,37038184,1,1998,1,1998
+50,"Ingaladdi, willeroo, Northern Territory, Australia",-15.29028,131.5752,7676,7676,Australia,Indirect,Minimum age,Yes,Engraving,,12686,132.11,-15.467,13251,36702480,517,2288530,7,37042
+51,"Jamjori, India",24.51548,87.08116,1634,1720,India,Direct,Exact Age,Unknown,Painting,No,7801,87.498,24.671,13251,35858314,889,4378968,489,2589734
+52,"Jinsha, China ",26.85505,100.22775,5216,5216,China,Indirect,Maximum Age,,Painting,Yes,11281,99.991,26.558,13251,36035318,887,4389530,494,2616106
+53,"Kaalpi site, Western Australia (Near Calvert Ranges)",-23.95,122.72,377,308,Australia,Direct,Exact age,Yes,Painting,,9373,122.91,-23.741,13251,35843994,481,2162814,1,3506
+54,"Kaho'olawe, Hawai'i, USA",20.55805,-156.60574,923,0,Hawaii,Indirect,Minimum age,Yes,Painting,Yes,2088,202.82,20.965,3,0,1,0,1,0
+55,"Kapova cave, Russia",53.0438,57.06514,17870,13930,Russia,Indirect,Unknown,Unknown,Painting,Yes,5943,56.403,53.36,13251,23189574,1,1074,1,1074
+56,"Kennedy River, Queensland, Australia",-15.5906,144.0308,1132,1132,Australia,Indirect,Minimum age,Yes,Engraving,Yes,887,144.62,-15.526,13251,35886868,480,2181204,26,137532
+57,"Kimberley, Australia",-17.34918,125.91521000000002,4300,1350,Australia,Direct,Exact age,Yes,Painting,Yes,11054,126.08,-17.433,13251,36017240,494,2242904,25,132082
+58,"La Garma, Cantabria, Spain",43.15194,-3.8963900000000002,16875,16875,Spain,Direct,Exact age,Yes,Paintings,Yes,5865,356.5093,42.71,13251,23831790,419,1650914,1,4716
+59,"La Pileta, Spain",36.6913,-5.2699,24228,24228,Spain,Direct,Exact age,Yes,Paintings,Yes,4828,354.4278,36.681,13251,22997618,135,573588,4,21530
+60,"La Tête du lion, France",45.7774,4.85521,26760,25997,France,Indirect,Minimum age,Yes,Paintings,,7444,4.4672,45.597,13251,22789362,128,548088,1,3764
+61,"Labastide, France",43.03555,0.35226999999999997,17476,484,France,Direct,Exact age,Yes,Paintings,Yes,6514,0.69828,42.752,13251,23194736,143,610656,1,3954
+62,"Lapa do Santo, Brazil",-19.47778,-44.03889,10600,10600,Brazil,Yes,Exact age,Yes,Petroglyph,Yes,5235,316.33,-19.469,13251,34696664,1,0,1,0
+63,"Lascaux Cave, France",45.05392,1.16765,22723,18848,France,Indirect,Minimum age,Yes,Paintings,Yes,6738,0.72878,44.7,13251,22614390,140,594186,1,4980
+64,"Lower Pecos, Texas",31.422909999999998,-103.49323000000001,4290,3865,USA,Direct,Exact Age,Unknown,Painting,,910,256.62,30.922,13251,36017240,2299,11166482,1,3400
+65,"M23, Calvert Ranges, Western Australia",-23.96667,122.96667,2085,759,Australia,Direct,Exact age,Yes,Painting,,9373,122.91,-23.741,13251,35851010,473,2168676,1,3452
+66,"Malangine Cave, Nene Valley, South Australia",-38.05,140.69,6348,5046,Australia,Indirect,Minimum age,Yes,Figure Fluting & Engraving,No,9936,140.18,-37.836,13251,36145152,485,2139526,1,4306
+67,Mámoa do Monte: Dos Marxos,42.64848,-7.94635,6110,5495,Portugal,Direct,Exact age,Yes,Painting,,5240,352.3277,42.539,13251,36157420,578,2492070,3,15634
+68,"Marjar - East Alligator, Northern territory, Australia",-13.09229,132.39377,191,191,Australia,Direct,Exact age,Yes,Beeswax,,12940,132.1,-13.57,13251,35854270,483,2169346,35,186214
+69,"Mennge-ya 1, Northern Territory (near Willeroo)",-15.29028,131.5752,4488,4010,Australia,Indirect,Minimum age,No,Engraving,No,12686,132.11,-15.467,13251,36036216,500,2285530,93,489722
+70,"Messak Plateau, Fezzan, Libya",25.75,11.83333,6946,5150,Libya,Indirect,,No,Engraving,,6981,11.652,26.094,13251,36656406,1,548,1,548
+71,"Mickey Springs 31, Hughenden, Queensland, Australia",-20.85,144.2,5929,5929,Australia,Unknown,Unknown,Yes,Engraving,No,447,144.65,-20.644,13251,36152668,484,2138530,1,4788
+72,"Moonface site, Queensland, Australia",-21.5097,140.6679,796,796,Australia,Direct,Exact age,Yes,Painting,Yes,13472,140.09,-21.506,13251,35904306,485,2198632,1,4352
+73,"Moses Cave, Arnhem Land, Northern Territory, Australia",-12.4302,130.88238,274,274,Australia,Direct,Exact age,Yes,Beeswax,No,12938,131.02,-11.891,13251,35850090,480,2160570,34,180336
+74,"Mount Manning, Western Australia",-30.12203,119.7426,586,182,Australia,Indirect,,Yes,Drawing,No,7831,119.81,-30.146,13251,35888796,1,2474,1,2474
+75,"Mungana Site, Queensland, Australia",-17.11842,144.39899,3644,1177,Australia,Direct,Exact age,Yes,Drawing,No,733,144.63,-17.237,13251,36021348,490,2235064,28,146808
+76,"Nangalor (Nanguluwur), Kakadu National Park, Northern Territory, Australia",-13.09229,132.39377,5570,776,Australia,Indirect,Minimum Age,Yes,Painting,No,12940,132.1,-13.57,13251,36134934,482,2130396,10,52330
+77,"Nara Inlet, Queensland",-20.15,148.9,2489,2489,Australia,Unknown,Unknown,Yes,Unknown,,1047,149.13,-19.823,13251,35664056,461,2074497,1,0
+78,"Natal Drakkenberg, South Africa",-29.46667,29.26667,675,402,South Africa,Indirect,,Yes,Painting,No,4260,29.277,-29.496,13251,35892016,1493,7520172,8,41906
+79,"Nawarla Gabarnmang, Jawoyn Country, Arnhem Land Australia",-12.1685,133.8335,27630,27630,Australia,Direct,Exact age,Yes,Painting,,13461,133.75,-12.313,13251,22979910,1883,9244704,22,116500
+80,"Nerja, Spain",36.785920000000004,-3.8044800000000003,23821,23821,Spain,Indirect,Minimum age,Yes,Drawings and torch rubbings,,5037,355.6655,36.727,13251,22985998,136,577642,4,21330
+81,"Ngarradj Warde Djobkeng, Northern Territory",-12.3,132.57,10083,9171,Australia,Indirect,Minimum age,Yes,Painting,,13193,132.66,-12.526,13251,36703456,667,3125478,27,143112
+82,"Ojo Guareña, Burgos, Spain",43.03434,-3.6645199999999996,13377,10950,Spain,Direct,Exact age,Unknown,Paintings,Yes,5865,356.5093,42.71,13251,28501940,538,2241624,1,4770
+83,"Padahlin, Taunggyi District, Shan State, Myanmar",20.7637,96.92090999999999,8515,1750,Myanmar,Indirect,Unknown,Unknown,Painting,Yes,9877,97.369,21.061,13251,37050556,1042,5229320,534,2830900
+84,"Painted Shelter, Queensland, Australia",-16.1295,144.1289,2484,2420,Australia,Direct,Exact Age,No,Painting,Yes,732,144.0,-16.381,13251,35664056,460,2072012,39,206118
+85,"Panaramitee, Flinders Ranges, South Australia",-31.41667,138.75,46273,3575,Australia,Indirect,Minimum age,No,Engraving,No,11336,138.21,-31.208,13251,19280932,1,0,1,0
+86,"Pech Merle, France",44.50731,1.64408,28727,24700,France,Direct,Exact age,Unknown (Likely no),Painting,Yes ,6968,2.186,44.685,13251,22964948,131,546550,1,4080
+87,Pedra Cuberta,43.08955,-8.98461,5775,5620,Spain,Direct,Exact,Yes,Painting,Yes,5239,351.4548,43.465,13251,36148972,574,2477666,3,15806
+88,"Pedra da Moura, Vimianzo, A Coruña, Spain",43.08135,-8.97786,5745,5745,Spain,Direct,Exact age,Yes,Painting,,5239,351.4548,43.465,13251,36147246,579,2498186,3,16128
+89,"Pete's Chase, Queensland",-16.1295,144.1289,2064,310,Australia,Direct,Exact age,Unknown,Painting,Yes ,732,144.0,-16.381,13251,35864446,472,2162940,44,232732
+90,"Pilbara, Western Australia, Australia",-21.883329999999997,116.76666999999999,4040,2600,Australia,Indirect,Minimum age,Unknown,Petroglyphs,Yes ,8335,116.78,-21.352,13251,36013448,492,2235412,1,3632
+91,"Pomongwe Cave, Zimbabwe",-20.547411999999998,28.51367,5526,4090,Zimbabwe,Direct,Exact age,Unknown,Painting,,5094,28.874,-20.477,13251,36152330,1507,7618368,7,36948
+92,"Pondra, Cantabria, Spain",43.26648,-3.4231800000000003,22000,22000,Spain,Indirect,Minimum age,Yes,Painting,Yes,5865,356.5093,42.71,13251,22617968,133,560780,1,4210
+93,"Possum Cave, Queensland, Australia",-10.7,142.51667,9501,2217,Australia,Indirect,Minimum age,Yes,Engraving,No,1037,142.21,-10.366,13251,36982044,662,3109770,100,530138
+94,"Prung-Cart Cave, South Australia (near Millicent)",-37.09041,140.82979,2783,1076,Australia,Indirect,Minimum age,Yes,Figure fluting,Unknown,10220,140.24,-36.816,13251,35673824,463,2084390,1,3860
+95,"Puritijarra, Cleland Hills, Northern Territory, Australia",-23.883329999999997,130.86667,2747,548,Australia,Indirect,Minimum age,Yes,Engraving,No,11327,131.26,-23.468,13251,35662326,462,2077666,1,4354
+96,"Quinkans B6 Rockshelter, Queensland, Australia",-15.6286,144.5308,2999,845,Australia,Indirect,Minimum Age,Unknown,Engraving & Painting,No,887,144.62,-15.526,13251,35669440,464,2085796,39,206764
+97,"Qurta, Egypt",24.629170000000002,32.9625,17000,10000,Egypt,Direct,Exact Age,Yes,Petroglyph,Yes,12297,32.896,24.333,13251,23829326,1,0,1,0
+98,"Racecourse Site, Queensland, Australia",-17.1747,144.4994,2031,2031,Australia,Direct,Exact Age,Yes,Drawing,No,733,144.63,-17.237,13251,35863892,470,2161408,138,732830
+99,"Red Lady, Queensland, Australia",-15.762120000000001,144.25756,8213,8213,Australia,Indirect,Minimum Age,Yes,Painting,Yes,887,144.62,-15.526,13251,36676884,516,2286264,15,79226
+100,"Robin Hood Cave and Church Hole, Creswell Crags, UK",53.263490000000004,-1.19353,15700,13200,UK,Indirect,Minimum Age,Yes,Engravings,Yes,7436,358.1954,53.233,13251,24438560,452,1788502,1,3414
+101,"RSA TYN2 , Drakensberg Mountains, Eastern Cape, South Africa",-29.46667,29.26667,2009,1971,South Africa,Direct,Exact age,Yes,Paintings,Unknown,4260,29.277,-29.496,13251,35863612,1495,7534118,7,37482
+102,"Sandy Creek 1 & 2, Queensland, Australia",-16.0,144.0,33676,2964,Australia,Indirect,Minimum Age,Yes,Painting,Yes,732,144.0,-16.381,13251,23360668,1942,9522278,1,4654
+103,"Serpent's Glen 1, Wiluna, Western Australia",-25.21667,120.75,3417,377,Australia,Direct,Exact Age,Yes,Painting,No,8601,120.18,-25.038,13251,35664986,465,2086668,1,3586
+104,"Snake Site, Cannon Hill, Northern Territory, Australia",-12.3,132.57,563,563,Australia,Indirect,Minimum age,Yes,Painting,,13193,132.66,-12.526,13251,35903996,481,2183594,78,411980
+105,"Steenbokfontein Cave, South Africa",-32.16167,18.33333,9392,2200,South Africa,Indirect,Minimum age,Yes,Painting,No,2201,18.464,-32.568,13251,36913092,1,860,1,860
+106,"Spirit Cave, Anbangbang, Kakadu, Northern Territory, Australia",-12.86552,132.814,14182,3747,Australia,Indirect,Minimum Age,Yes,Painting,No,13193,132.66,-12.526,13251,26654102,682,3205532,28,147712
+107,"Split rock, Queensland, Australia",-15.6525,144.4975,7433,7433,Australia,Direct,Exact Age,No,Painting,,887,144.62,-15.526,13251,36591346,479,2083204,10,52302
+108,"Steenbokfontein Cave, South Africa",-32.16167,18.33333,9393,2200,South Africa,1999,AMS dating,Indirect,Minimum age,No,2201,18.464,-32.568,13251,36913092,1,860,1,860
+109,"Sturt Meadows, New South Wales, Australia",-31.11,140.4,12237,11978,Australia,Indirect,Minimum Age,Yes,Engraving,,11869,140.54,-30.626,13251,29622496,760,3622114,1,3244
+110,"Tassili-n-Ajjer, Algeria",25.8136,8.13386,8237,2287,Algeria,Indirect,,Yes,Paintings,Yes,6087,7.7471,25.392,13251,36688446,1,1430,1,1430
+111,"Tennessee, Cumberland Plateau",35.9496,-85.02705,5698,,USA,Direct,Exact Age,Yes,Charcoal pictograph,Yes,3714,275.02,36.157,13251,36158342,2377,11550280,245,1297860
+112,"Tito Bustillo Cave, Spain",43.46071,-5.0673900000000005,36200,29650,Spain,Indirect,Mixed,Yes,Paintings,Yes,5654,354.2981,43.612,13251,23268090,379,1504078,1,5046
+113,"uKhalamba, South Africa",-29.38049,29.546,4050,990,South Africa,Indirect,Maximum age,Yes,Painting,Yes,4260,29.277,-29.496,13251,36013448,1515,7630736,15,79540
+114,"Unnamed sites 1-3, Kimberley, Western Australia",-17.34918,125.91521000000002,23800,Modern,Australia,Indirect,Minimum Age,No,Painting,Yes,11054,126.08,-17.433,13251,22968312,1901,9352558,42,221490
+115,"Urdiales, Spain",43.36882,-3.21564,15223,15223,Spain,Direct,Exact age,Yes,Painting,Yes,6071,357.1476,43.701,13251,25071332,514,2109028,1,4770
+116,"Urkan-e-Rub, Lower Jordan Valley, Israel",32.42288,35.30272,20204,16750,Israel,Unknown,Unknown,Unknown,Engraving,No,13098,34.821,32.066,13251,22851590,3,10288,1,3412
+117,"Villars, France",45.44228,0.78514,21735,17473,France,Direct,Exact age,Yes,Drawings and torch rubbings,No,6967,1.4897,45.661,13251,22618566,131,556920,1,4630
+118,"Walkunder Arch Cave, Queensland, Australia",-17.2297,144.5169,34254,3575,Australia,Indirect,"Maximum age for date to use; different samples have minimum age, maximum age, middle date, and supporting date",Yes,Paintings & Engraving,,733,144.63,-17.237,13251,23362134,1945,9522198,1,3794
+119,"Wanga East, Northern Territory, Australia",-24.19,131.4,8093,1332,Australia,Indirect,Minimum age,Yes,Engraving,Yes,11328,131.87,-24.359,13251,36689846,519,2291582,1,3614
+120,"Waterfall Cave, New South Wales, Australia",-35.42,150.11,604,,Australia,Direct,Exact Age,Yes,Painting,No,602,150.12,-35.372,13251,35885658,482,2185832,50,263770
+121,"Wharton Hill, Australia",-32.64,139.77,41084,36400,Australia,Indirect,Minimum age,No,Petroglyph,Yes,11338,140.44,-32.704,13251,23479394,1,2156,1,2156
+122,"Winnemucca Lake, Nevada, Usa",40.12185,-119.33962,12500,12500,USA,Indirect,Minimum age,Yes,Painting,No,11132,240.15,40.579,13251,29106078,810,3632086,1,4432
+123,"Wonderwerk Cave, South Africa",-27.846729999999997,23.55418,11898,1210,South Africa,Indirect,Minimum age,Unknown ,Engraving,No,3220,23.16,-28.003,13251,30311274,1555,7847780,9,47092
+124,"Wurik (Mann River E1002, 1004, 1005)., Northern Territory, Australia/Yikarrakkal (Mann River A1005), Northern Territory, Australia",-12.21948,134.14352,646,183,Australia,Direct,Exact Age,Yes,Beeswax,Yes,13461,133.75,-12.313,13251,35881140,485,2198626,40,209942
+125,"Yam Camp, Cape York, Queensland, Australia",-15.7823,144.2341,682,602,Australia,Direct,"Exact Age, but latest date is minimum age",Yes,Painting,Yes,887,144.62,-15.526,13251,35907480,480,2180164,16,84274
+126,"Yiwarlarlay, Northern Territory, Australia",-12.36686,130.88125,4592,3386,Australia,Indirect,Minimum age,Yes,Engraving,Yes,12938,131.02,-11.891,13251,36029174,499,2284450,94,496336
+127,"Yunta Springs, South Australia",-32.54,139.55,17020,1398,Australia,Indirect,Minimum age,Yes,Engraving,Mixed ,11072,139.25,-33.006,13251,23831352,1,1642,1,1642

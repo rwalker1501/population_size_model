@@ -38,7 +38,7 @@ def clusterworld(lon,lat,adjlist,ix,productthresh,densities):
    print("cluster count:",clustercount,",",nonsingletons,"non-singletons")
    return clusters
 
-base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/POPESTNew/'
+base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/population_size_model/'
 base_path=''
 population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
@@ -47,7 +47,7 @@ adjfile = "population_data/all-adj.txt"
 adjthresh = 150
 fromkya = 120
 tokya = 0
-productthresh = 15000000
+productthresh = 20000000
 if (len(sys.argv)>1):
   productthresh = int(sys.argv[1])
 if (len(sys.argv)>2):

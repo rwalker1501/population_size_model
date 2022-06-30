@@ -12,8 +12,8 @@ from popdata import *
 
 plotsfolder = "PLOTS/"
 
-targetfile = "testdata.csv"
-outfile = "results_no_eq_th_12_5m.csv" 
+targetfile = "no_equatorials.csv"
+outfile = "results_no_eq_th_5m.csv" 
 threshfile = "thresholds.csv"
 threshindex = 0
 
@@ -26,7 +26,7 @@ if (len(sys.argv)>3):
 if (len(sys.argv)>4):
    threshindex = int(sys.argv[4])
 
-#base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/POPESTNew/'
+#base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/population_size_model/'
 base_path=''
 population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)

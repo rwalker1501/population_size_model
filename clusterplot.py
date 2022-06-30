@@ -8,19 +8,19 @@ from classes_module import Target, PopulationData
 from worldplotter import *
 from popdata import *
 
-base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/POPESTNew/'
+base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/population_size_model/'
 base_path=''
 population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjfile = "population_data/all-adj.txt"
-#testing for Bush turkey australia
-centerlat = -23.96
-centerlon = 122.97
+#testing for Chauvet
+centerlat = 44.38
+centerlon = 4.41
 adjthresh = 150
-fromkya = 50
+fromkya = 75
 tokya = 0
-productthresh = 5000000
+productthresh = 10000000
 if (len(sys.argv)>1):
   centerlon = float(sys.argv[1])
 if (len(sys.argv)>2):

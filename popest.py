@@ -9,7 +9,6 @@ from classes_module import Target, PopulationData
 from worldplotter import *
 from popdata import *
 
-base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/POPESTNew/'
 base_path=''
 population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
@@ -17,8 +16,9 @@ population_data=load_population_data_source(base_path, population_data_name)
 lonfile = "DATA/long.txt"
 latfile = "DATA/lat.txt"
 adjfile = "population_data/all-adj.txt"
-centerlon = 355.877
 centerlat = 43.377
+centerlon = 355.877
+
 adjthresh = 150
 kya = 36
 productthresh = 20000000
