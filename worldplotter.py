@@ -4,8 +4,9 @@ import numpy as np
 from matplotlib import collections as mc
 from moviepy.editor import *
 
-def plotworld(c1,c2,c3,lon,lat,filename,caption):
+def plotworld(c1,c2,c3,origlon,lat,filename,caption):
    plt.figure()
+   lon = [(x if x < 340 else x-360) for x in origlon]
    plt.scatter(lon, lat, s=1, color='blue')
    clon = []
    clat = []
@@ -27,8 +28,9 @@ def plotworld(c1,c2,c3,lon,lat,filename,caption):
 #   plt.show()
    plt.close()
 
-def plotcluster(c,lon,lat,filename,caption):
+def plotcluster(c,origlon,lat,filename,caption):
    plt.figure()
+   lon = [(x if x < 340 else x-360) for x in origlon]
    plt.scatter(lon, lat, s=1, color='blue')
    clon = []
    clat = []
@@ -44,9 +46,10 @@ def plotcluster(c,lon,lat,filename,caption):
 #   plt.show()
    plt.close()
 
-def plotworldclusters(clusters,colors,lon,lat,filename,caption):
+def plotworldclusters(clusters,colors,origlon,lat,filename,caption):
    clist = ['red','yellow','orange','green','cyan','magenta', 'gold',
             'forestgreen','teal','purple','coral','lawngreen','pink']
+   lon = [(x if x < 340 else x-360) for x in origlon]
    availcolors = len(clist)
    plt.figure()
    plt.scatter(lon, lat, s=1, color='blue') # default color
