@@ -38,15 +38,63 @@ def clusterworld(lon,lat,adjlist,ix,productthresh,densities):
    print("cluster count:",clustercount,",",nonsingletons,"non-singletons")
    return clusters
 
-base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/population_size_model/'
+def printclusters(clusters,densities,ix):
+   for c in clusters:
+      size = len(c)
+      if size > 1:
+         pop = 0
+         for cell in c:
+            pop = pop + densities[ix][cell]
+         print("   ",size,"("+str(pop)+")")
+   print()
+
+def initialtags(clusters,n):
+   tags = [-1]*n
+   counter = 0
+   for c in clusters:
+      if len(c) > 1:
+         for i in c:
+            tags[i] = counter
+         counter = counter + 1
+   return tags
+
+def maxtag(c,oldtags):
+   tagdict = dict()
+   for i in c:
+      tag = oldtags[i]
+      if tag in tagdict:
+         tagdict[tag] = tagdict[tag] + 1
+      else:
+         tagdict[tag] = 1
+   commontag = max(tagdict, key=tagdict.get)
+   return commontag
+
+def tagclusters(clusters,oldtags):
+   n = len(oldtags)
+   tags = [-1]*n
+   for c in clusters:
+      if len(c) > 1:
+         tagnum = maxtag(c,oldtags)
+         for i in c:
+            tags[i] = tagnum
+   return tags
+
+def getcolors(clusters,colortags):
+   n = len(clusters)
+   colors = [-1]*n
+   for i in range(n):
+      colors[i] = colortags[clusters[i][0]]
+   return colors
+
+base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/POPESTNew/'
 base_path=''
 population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjfile = "population_data/all-adj.txt"
 adjthresh = 150
-fromkya = 120
-tokya = 0
+fromkya = 36
+tokya = 35.6
 productthresh = 20000000
 if (len(sys.argv)>1):
   productthresh = int(sys.argv[1])
@@ -77,15 +125,22 @@ print("time indexes:",first,last)
 
 counter = 1
 images = []
-for ix in range(first,last,40):
+for ix in range(first,last):
    ya = (numquarters - ix)*25
    print(ix,"(",ya,"years ago )")
    clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities)
+   printclusters(clusters,densities,ix)
    caption = str(ya) + " years ago"
    ix0 = f'{counter:02d}'+'-'
    filename = "PLOTS/world"+ix0+str(ya)+"ya.png"
    images.append(filename)
-   plotworldclusters(clusters,lon,lat,filename,caption)
+   if counter == 1:
+      colortags = initialtags(clusters,len(lon))
+   else:
+      colortags = tagclusters(clusters,oldtags)
+   clustercolors = getcolors(clusters,colortags)
+   plotworldclusters(clusters,clustercolors,lon,lat,filename,caption)
+   oldtags = colortags
    counter = counter + 1
 
 animate(images,"PLOTS/movie.mp4")

@@ -44,17 +44,25 @@ def plotcluster(c,lon,lat,filename,caption):
 #   plt.show()
    plt.close()
 
-def plotworldclusters(clusters,lon,lat,filename,caption):
+def plotworldclusters(clusters,colors,lon,lat,filename,caption):
+   clist = ['red','yellow','orange','green','cyan','magenta', 'gold',
+            'forestgreen','teal','purple','coral','lawngreen','pink']
+   availcolors = len(clist)
    plt.figure()
    plt.scatter(lon, lat, color='blue') # default color
-   for c in clusters:
+   cycle = 0
+   n = len(clusters)
+   for i in range(n):
+      c = clusters[i]
+      clustercolor = colors[i]
       if len(c) > 1: # plot only for non-single-cell clusters
          clon = []
          clat = []
          for i in c:
             clon.append(lon[i])
             clat.append(lat[i])
-         plt.scatter(clon, clat)
+         plt.scatter(clon, clat, color = clist[clustercolor % availcolors])
+         cycle = cycle + 1
    plt.xlabel('longitude')
    plt.ylabel('latitude')
    plt.title(caption)
