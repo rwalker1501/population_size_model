@@ -38,21 +38,26 @@ def clusterworld(lon,lat,adjlist,ix,productthresh,densities):
    print("cluster count:",clustercount,",",nonsingletons,"non-singletons")
    return clusters
 
-def printclusters(clusters,densities,ix):
-   for c in clusters:
+def printclusters(clusters,colors,densities,ix):
+   n = len(clusters)
+   for i in range(n):
+      c = clusters[i]
       size = len(c)
       if size > 1:
          pop = 0
          for cell in c:
             pop = pop + densities[ix][cell]
-         print("   ",size,"("+str(pop)+")")
+         print("   ",size,"("+str(pop)+") id:",colors[i])
    print()
 
-def initialtags(clusters,n):
+def tagclusters(clusters,n,popix):
    tags = [-1]*n
    counter = 0
    for c in clusters:
-      if len(c) > 1:
+      if len(c) == 1:
+         if popix[c[0]] > 0:
+            tags[c[0]] = -2
+      elif len(c) > 1:
          for i in c:
             tags[i] = counter
          counter = counter + 1
@@ -67,14 +72,32 @@ def maxtag(c,oldtags):
       else:
          tagdict[tag] = 1
    commontag = max(tagdict, key=tagdict.get)
+   if commontag == -1:
+      del tagdict[-1]
+      if len(tagdict)>0:
+         commontag = max(tagdict, key=tagdict.get)
+         if commontag == -2:
+            del tagdict[-2]
+            if len(tagdict)>0:
+               commontag = max(tagdict, key=tagdict.get)
+#   print("common:",commontag)
    return commontag
 
-def tagclusters(clusters,oldtags):
+def resolvetags(newtags,oldtags,clusters,popix):
+   availtag = max(oldtags)+1 # getnextavailabletag
+   usedtags = {-1,-2}
    n = len(oldtags)
    tags = [-1]*n
    for c in clusters:
-      if len(c) > 1:
+      if len(c) == 1:
+         if popix[c[0]] > 0:
+            tags[c[0]] = -2
+      elif len(c) > 1:
          tagnum = maxtag(c,oldtags)
+         if tagnum in usedtags:
+            tagnum = availtag
+            availtag = availtag+1
+         usedtags.add(tagnum)
          for i in c:
             tags[i] = tagnum
    return tags
@@ -91,17 +114,23 @@ base_path=''
 population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
-adjfile = "population_data/all-adj.txt"
-adjthresh = 150
-fromkya = 36
-tokya = 35.6
+adjthresh = 150 # change to 300 if you want more adjacencies
 productthresh = 20000000
+fromkya = 120
+tokya = 0
+
 if (len(sys.argv)>1):
-  productthresh = int(sys.argv[1])
+  adjthresh = int(sys.argv[1])
 if (len(sys.argv)>2):
-  fromkya = int(sys.argv[2])
+  productthresh = int(sys.argv[2])
 if (len(sys.argv)>3):
-  tokya = int(sys.argv[3])
+  fromkya = int(sys.argv[3])
+if (len(sys.argv)>4):
+  tokya = int(sys.argv[4])
+
+adjfile = "population_data/all-adj.txt"
+if adjthresh == 300:
+   adjfile = "population_data/all-adj300.txt"
 
 print("Parameters")
 print(" ---")
@@ -125,20 +154,21 @@ print("time indexes:",first,last)
 
 counter = 1
 images = []
-for ix in range(first,last):
+for ix in range(first,last,40):
    ya = (numquarters - ix)*25
    print(ix,"(",ya,"years ago )")
    clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities)
-   printclusters(clusters,densities,ix)
    caption = str(ya) + " years ago"
    ix0 = f'{counter:02d}'+'-'
    filename = "PLOTS/world"+ix0+str(ya)+"ya.png"
    images.append(filename)
    if counter == 1:
-      colortags = initialtags(clusters,len(lon))
+      colortags = tagclusters(clusters,len(lon),densities[ix])
    else:
-      colortags = tagclusters(clusters,oldtags)
+      temptags = tagclusters(clusters,len(lon),densities[ix])
+      colortags = resolvetags(temptags,oldtags,clusters,densities[ix])
    clustercolors = getcolors(clusters,colortags)
+   printclusters(clusters,clustercolors,densities,ix)
    plotworldclusters(clusters,clustercolors,lon,lat,filename,caption)
    oldtags = colortags
    counter = counter + 1

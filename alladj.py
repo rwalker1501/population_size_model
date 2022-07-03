@@ -19,5 +19,5 @@ lat=population_data.lat_array
 # adjfile = "population_data/all-adj.txt"
 adjfile = "population_data/all-adj1.txt"
 
-edges = makeadj(lon,lat)
+edges = makeadj(lon,lat,250)
 saveadj(edges,adjfile)

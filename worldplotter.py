@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import collections as mc
 from moviepy.editor import *
+import colorconsts
 
 def plotworld(c1,c2,c3,origlon,lat,filename,caption):
    plt.figure()
@@ -47,25 +48,35 @@ def plotcluster(c,origlon,lat,filename,caption):
    plt.close()
 
 def plotworldclusters(clusters,colors,origlon,lat,filename,caption):
-   clist = ['red','yellow','orange','green','cyan','magenta', 'gold',
-            'forestgreen','teal','purple','coral','lawngreen','pink']
    lon = [(x if x < 340 else x-360) for x in origlon]
-   availcolors = len(clist)
    plt.figure()
-   plt.scatter(lon, lat, s=1, color='blue') # default color
-   cycle = 0
+   plt.scatter(lon, lat, s=1, color=colorconsts.nonzerocolor())
+   # default color for singletons
+   clon = []
+   clat = []
    n = len(clusters)
+   for i in range(n):
+      c = colors[i]
+      if c == colorconsts.zerotag():
+         cellindex = clusters[i][0]
+         clon.append(lon[cellindex])
+         clat.append(lat[cellindex])
+   # color the zero pop singletons differently
+   plt.scatter(clon, clat, s=1, color = colorconsts.zerocolor())
+   cycle = 0
    for i in range(n):
       c = clusters[i]
       clustercolor = colors[i]
-      if len(c) > 1: # plot only for non-single-cell clusters
+      if len(c) > 1:
          clon = []
          clat = []
          for i in c:
             clon.append(lon[i])
             clat.append(lat[i])
-         plt.scatter(clon, clat, s=1, color = clist[clustercolor % availcolors])
+         availcolor = colorconsts.getcolor(clustercolor)
+         plt.scatter(clon, clat, s=1, color = availcolor)
          cycle = cycle + 1
+         
    plt.xlabel('longitude')
    plt.ylabel('latitude')
    plt.title(caption)
