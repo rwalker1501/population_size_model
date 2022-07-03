@@ -7,6 +7,7 @@ from poplib2 import *
 from classes_module import Target, PopulationData
 from worldplotter import *
 from popdata import *
+import pandas as pd
 
 def clusterworld(lon,lat,adjlist,ix,productthresh,densities):
    n = len(adjlist)
@@ -49,6 +50,24 @@ def printclusters(clusters,colors,densities,ix):
             pop = pop + densities[ix][cell]
          print("   ",size,"("+str(pop)+") id:",colors[i])
    print()
+
+def addtrace(clustertrace,counter,ya,clusters,colors,densities,ix):
+   strya = str(ya)+'ya'
+   clustertrace[strya] = [0]*len(clustertrace['clusterid'])
+   n = len(clusters)
+   for i in range(n):
+      c = clusters[i]
+      size = len(c)
+      if size > 1:
+         pop = 0
+         for cell in c:
+            pop = pop + densities[ix][cell]
+         id = colors[i]
+         if id >= len(clustertrace['clusterid']):
+            for key in clustertrace.keys():
+               clustertrace[key].append(0)
+            clustertrace['clusterid'][id]=id
+         clustertrace[strya][id] = pop
 
 def tagclusters(clusters,n,popix):
    tags = [-1]*n
@@ -116,8 +135,13 @@ population_data=load_population_data_source(base_path, population_data_name)
 
 adjthresh = 150 # change to 300 if you want more adjacencies
 productthresh = 20000000
+#fromkya = 36.4
+#tokya = 36
+#step = 1
 fromkya = 120
 tokya = 0
+step = 40
+
 
 if (len(sys.argv)>1):
   adjthresh = int(sys.argv[1])
@@ -154,7 +178,9 @@ print("time indexes:",first,last)
 
 counter = 1
 images = []
-for ix in range(first,last,40):
+clustertrace = {}
+clustertrace['clusterid'] = []
+for ix in range(first,last,step):
    ya = (numquarters - ix)*25
    print(ix,"(",ya,"years ago )")
    clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities)
@@ -169,8 +195,12 @@ for ix in range(first,last,40):
       colortags = resolvetags(temptags,oldtags,clusters,densities[ix])
    clustercolors = getcolors(clusters,colortags)
    printclusters(clusters,clustercolors,densities,ix)
+   addtrace(clustertrace,counter,ya,clusters,clustercolors,densities,ix)
    plotworldclusters(clusters,clustercolors,lon,lat,filename,caption)
    oldtags = colortags
    counter = counter + 1
+
+df = pd.DataFrame(clustertrace)
+df.to_csv("trace.csv")
 
 animate(images,"PLOTS/movie.mp4")
