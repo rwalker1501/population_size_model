@@ -14,9 +14,9 @@ population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjfile = "population_data/all-adj.txt"
-#testing for Chauvet
-centerlat = 44.38
-centerlon = 4.41
+#testing for Glen Canyon
+centerlat = 37.38
+centerlon = -110.84
 adjthresh = 150
 fromkya = 75
 tokya = 0

@@ -92,7 +92,7 @@ population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjfile = "population_data/all-adj.txt"
-adjthresh = 150
+adjthresh = 250  ##this actually uses adjacencies file
 fromkya = 120
 tokya = 0
 productthresh = 20000000
