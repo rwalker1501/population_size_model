@@ -19,7 +19,7 @@ centerlat = 43.377
 adjthresh = 150
 fromkya = 36
 tokya = 35.6
-productthresh = 10000000
+productthresh = 20000000
 if (len(sys.argv)>1):
   centerlon = float(sys.argv[1])
 if (len(sys.argv)>2):
