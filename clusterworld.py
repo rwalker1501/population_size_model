@@ -133,8 +133,8 @@ base_path=''
 population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
-adjthresh = 150 # change to 300 if you want more adjacencies
-productthresh = 20000000
+adjthresh = 300 # change to 300 if you want more adjacencies
+productthresh = 15000000
 #fromkya = 36.4
 #tokya = 36
 #step = 1
