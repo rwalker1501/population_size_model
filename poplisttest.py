@@ -12,7 +12,7 @@ from popdata import *
 
 base_path = ''
 filename = 'pop-adj150-prod20000000'
-popload = loadpopcomputations(base_path)
+popload = loadpopcomputations(base_path,filename)
 
 print("test loaded values...")
 for i in range(4644,4660):

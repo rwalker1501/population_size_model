@@ -128,13 +128,14 @@ def getcolors(clusters,colortags):
       colors[i] = colortags[clusters[i][0]]
    return colors
 
-base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/POPESTNew/'
+base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/population_size_model/'
 base_path=''
-population_data_name='Eriksson'
+population_data_name='timmermann'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjthresh = 150 # change to 300 if you want more adjacencies
-productthresh = 20000000
+productthresh = 15000000
+#productthresh = 500
 #fromkya = 36.4
 #tokya = 36
 #step = 1
@@ -152,7 +153,14 @@ if (len(sys.argv)>3):
 if (len(sys.argv)>4):
   tokya = int(sys.argv[4])
 
-adjfile = "population_data/all-adj.txt"
+if population_data_name=="Eriksson":
+    adjfile = "population_data/all-adj.txt"
+else:
+    if population_data_name=="timmermann":
+        adjfile="population_data/timmermann-adj1.txt"
+    else:
+        print ('invalid population data name')
+        sys.exit()
 if adjthresh == 300:
    adjfile = "population_data/all-adj300.txt"
 
@@ -169,10 +177,21 @@ densities=population_data.density_array
 
 preedges = loadadjfromfile(adjfile)
 adjlist = makeadjlist(len(lon),preedges)
-
-numquarters = 6084
-first = int(numquarters - fromkya*40)
-last = int(numquarters - tokya*40)
+if population_data_name=="Eriksson":
+    numquarters = 6084
+    multiplier=40
+    multiplier2=25
+    step=40
+    first = int(numquarters - fromkya*multiplier)
+    last = int(numquarters - tokya*multiplier)
+else:
+    numquarters=125
+    multiplier=1
+    multiplier2=1000
+    step= -1
+    first = int(fromkya*multiplier)
+    last = int(tokya*multiplier)
+    productthresh=productthresh*0.00577**2  #this puts threshold on same scale as eriksson - for final code need to scale for eriksson instead of tindermann
 
 print("time indexes:",first,last)
 
@@ -181,7 +200,10 @@ images = []
 clustertrace = {}
 clustertrace['clusterid'] = []
 for ix in range(first,last,step):
-   ya = (numquarters - ix)*25
+   if population_data_name=="Eriksson":     
+       ya = (numquarters - ix)*multiplier2
+   else:
+       ya=ix*multiplier2
    print(ix,"(",ya,"years ago )")
    clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities)
    caption = str(ya) + " years ago"

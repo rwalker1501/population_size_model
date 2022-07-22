@@ -19,7 +19,7 @@ def load_population_data_source(base_path, population_data_name):
     lons_txt=data['lons_' + label]
     ts_txt=data['ts_' + label]
     dens_txt=data['dens_' + label]
-    
+
     print(info_file_path)
     population_data_info = json.load(open(info_file_path));
     new_population_data = PopulationData(population_data_name, lats_txt, lons_txt, ts_txt, dens_txt, population_data_info)
