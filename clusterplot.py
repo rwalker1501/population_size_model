@@ -48,8 +48,8 @@ print(nearest, ":", lon[nearest],lat[nearest], "is the nearest node to target", 
 preedges = loadadjfromfile(adjfile)
 
 numquarters = 6084
-first = int(numquarters - fromkya*40)
-last = int(numquarters - tokya*40)
+first = int(numquarters-1 - fromkya*40)
+last = int(numquarters-1 - tokya*40)
 
 print("time indexes:",first,last)
 

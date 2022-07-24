@@ -87,7 +87,8 @@ for i in targets.index:
 
     clustersize2,popsize2,cells2 = popbyproduct(lon,lat,nearest,kya,preedges,productthresh,densities)
 
-    timeindex = 6084-int(kya*40)
+    numlines = 6084
+    timeindex = int(numlines-1-kya*40)
     print('   Time index:',timeindex)
     print('   Nearest cell:', nearest, '(', lon[nearest], lat[nearest], ')')
     cix = cells1[0]

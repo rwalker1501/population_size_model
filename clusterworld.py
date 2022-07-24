@@ -171,8 +171,8 @@ preedges = loadadjfromfile(adjfile)
 adjlist = makeadjlist(len(lon),preedges)
 
 numquarters = 6084
-first = int(numquarters - fromkya*40)
-last = int(numquarters - tokya*40)
+first = int(numquarters-1 - fromkya*40)
+last = int(numquarters-1 - tokya*40)
 
 print("time indexes:",first,last)
 

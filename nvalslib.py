@@ -1,8 +1,8 @@
 
 def getkya(fromkya,tokya,densities):   
     numlines = 6084
-    fromlinenum = int(numlines - fromkya*40)
-    tolinenum = int(numlines - tokya*40)
+    fromlinenum = int(numlines-1 - fromkya*40)
+    tolinenum = int(numlines-1 - tokya*40)
     kyarec=densities[fromlinenum:tolinenum+1]
     return kyarec
 

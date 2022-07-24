@@ -65,15 +65,15 @@ densities=population_data.density_array
 edges = loadadjfromfile(adjfile)
 
 numquarters = 6084
-first = int(numquarters - fromkya*40)
-last = int(numquarters - tokya*40)
+first = int(numquarters-1 - fromkya*40)
+last = int(numquarters-1 - tokya*40)
 
 print("time indexes:",first,last)
 
 images = []
 counter = 1
 for ix in range(first,last,step):
-   ya = (numquarters - ix)*25
+   ya = (numquarters-1 - ix)*25
    print(ix,"(",ya,"years ago )")
    caption = str(ya) + " years ago"
    ix0 = f'{counter:02d}'+'-'

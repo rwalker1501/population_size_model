@@ -182,8 +182,8 @@ last = 6084
 # first = 4600
 # last = 4700
 step = 1
-print(" From (years ago)", (numquarters - first)*25)
-print(" To   (years ago)", (numquarters - last)*25)
+print(" From (years ago)", (numquarters-1 - first)*25)
+print(" To   (years ago)", (numquarters-1 - last)*25)
 print()
 
 print("time indexes:",first,last)
@@ -194,7 +194,7 @@ images = []
 clustertrace = {}
 clustertrace['clusterid'] = []
 for ix in range(first,last,step):
-   ya = (numquarters - ix)*25
+   ya = (numquarters-1 - ix)*25
    print(ix,"(",ya,"years ago )")
    clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities)
    caption = str(ya) + " years ago"
