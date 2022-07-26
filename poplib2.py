@@ -11,12 +11,25 @@ def popbyadj(lon,lat,nearest,kya,edges,densities):
     return clustersize,popsize,clusterindexes
 
 def popbyproduct(lon,lat,nearest,kya,preedges,productthresh,densities):
-    edges = filterbypopproduct(preedges,lon,lat,kya,productthresh,densities)
+    #In some cases a target cell has 0 population (sometimes because it has a sea border)
+    # In this case we replace the recorded population with the mean of all immediately adjacent cells
+    # This means the clustef is likely to be a lot bigger
+    kyarec = getkya(kya,kya,densities)    
+    snap = [int(x) for x in kyarec[0]]
+    pop_nearest=snap[nearest]
+    mean_pop=0
+    if pop_nearest==0:
+        total_pop=0
+        immediates=gettrueadjacents (preedges, nearest)
+        for aCell in immediates:
+            total_pop=total_pop+snap[aCell]
+        mean_pop=total_pop/len(immediates)
+    edges = filterbypopproduct(preedges,lon,lat,kya,productthresh,densities,nearest,mean_pop)
     # print(" Number of connections after product filter", len(edges))
     adjlist = makeadjlist(len(lon),edges)
     clusterindexes = getcluster(adjlist,nearest)
     poparray = getonepoparray(kya,densities)
-    popsize = sumpop(poparray,clusterindexes)
+    popsize = sumpop(poparray,clusterindexes)+mean_pop
     clustersize = len(clusterindexes)
     return clustersize,popsize,clusterindexes
 

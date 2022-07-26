@@ -130,7 +130,7 @@ def getcolors(clusters,colortags):
 
 base_path='smb://127.0.0.1/Google Drive/My Drive/Documents 2022/Human exceptionalism/Population size/John Vergara Model/population_size_model/'
 base_path=''
-population_data_name='timmermann'
+population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjthresh = 150 # change to 300 if you want more adjacencies
