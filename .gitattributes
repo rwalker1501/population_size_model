@@ -1,0 +1,10 @@
+all-adj.txt filter=lfs diff=lfs merge=lfs -text
+all-adj300.txt filter=lfs diff=lfs merge=lfs -text
+Eriksson.npz filter=lfs diff=lfs merge=lfs -text
+eriksson_info.txt filter=lfs diff=lfs merge=lfs -text
+pop-adj150-prod20000000.npz filter=lfs diff=lfs merge=lfs -text
+timmermann-adj1.txt filter=lfs diff=lfs merge=lfs -text
+timmermann.npz filter=lfs diff=lfs merge=lfs -text
+timmermann_info.txt filter=lfs diff=lfs merge=lfs -text
+*.npz filter=lfs diff=lfs merge=lfs -text
+*.txt filter=lfs diff=lfs merge=lfs -text

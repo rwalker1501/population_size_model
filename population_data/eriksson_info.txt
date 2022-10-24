@@ -1,6 +1,3 @@
-{
-	"time_multiplier": 25,
-	"density_multiplier": 0.00577,
-	"time_window": 24,
-	"ascending_time": false
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:561b006ac26237f277bfd01b7ab94565f55d0a53bc2cbd14ded42ea004667d9c
+size 105
