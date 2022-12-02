@@ -1,6 +1,7 @@
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from matplotlib import collections as mc
 from moviepy.editor import *
 import colorconsts
@@ -89,11 +90,19 @@ def plotcluster(c,origlon,lat,filename,caption):
 #   plt.show()
    plt.close()
 
+def clip(wlon,wlat):
+   lldf = pd.DataFrame({'lon':wlon,'lat':wlat})
+   filterdf = lldf[(lldf['lat']>31) & (lldf['lat']<62) & ((lldf['lon']>353) | (lldf['lon']< 60))]
+   lon = list(filterdf['lon'])
+   lat = list(filterdf['lat'])
+   return lon,lat
+
 def plotWEclusters(clusters,colors,origlon,lat,filename,caption):
    big=30
    lon = [(x if x < 340 else x-360) for x in origlon]
    plt.figure()
-   plt.scatter(lon, lat, s=big, color=colorconsts.nonzerocolor())
+   cliplon,cliplat = clip(lon, lat)
+   plt.scatter(cliplon, cliplat, s=big, color=colorconsts.nonzerocolor())
    # default color for singletons
    clon = []
    clat = []
@@ -105,7 +114,9 @@ def plotWEclusters(clusters,colors,origlon,lat,filename,caption):
          clon.append(lon[cellindex])
          clat.append(lat[cellindex])
    # color the zero pop singletons differently
-   plt.scatter(clon, clat, s=big, color = colorconsts.zerocolor())
+   
+   cliplon,cliplat = clip(clon, clat)
+   plt.scatter(cliplon, cliplat, s=big, color = colorconsts.zerocolor())
    cycle = 0
    for i in range(n):
       c = clusters[i]
@@ -117,7 +128,8 @@ def plotWEclusters(clusters,colors,origlon,lat,filename,caption):
             clon.append(lon[i])
             clat.append(lat[i])
          availcolor = colorconsts.getcolor(clustercolor)
-         plt.scatter(clon, clat, s=big, color = availcolor)
+         cliplon,cliplat = clip(clon, clat)
+         plt.scatter(cliplon, cliplat, s=big, color = availcolor)
          cycle = cycle + 1
          
    plt.xlabel('longitude')

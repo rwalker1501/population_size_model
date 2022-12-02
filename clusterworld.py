@@ -139,8 +139,11 @@ productthresh = 20000000
 #fromkya = 36.4
 #tokya = 36
 #step = 1
-fromkya = 120
-tokya = 0
+#fromkya = 120
+#tokya = 0
+#step = 40
+fromkya = 17
+tokya = 2
 step = 40
 
 
