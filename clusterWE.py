@@ -8,8 +8,9 @@ from classes_module import Target, PopulationData
 from worldplotter import *
 from popdata import *
 import pandas as pd
+from mobility import *
 
-def clusterworld(lon,lat,adjlist,ix,productthresh,densities):
+def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor):
    n = len(adjlist)
    clustercount = 0
    clusters = []
@@ -28,7 +29,7 @@ def clusterworld(lon,lat,adjlist,ix,productthresh,densities):
 #            print(p,len(queue))
             for j in adjlist[p]:
                sq = densities[ix][p]*densities[ix][j]
-               if sq >= productthresh:
+               if sq >= productthresh*mobfactor:
                   if (not visited[j]):
                      visited[j] = True
                      clusters[clustercount].append(j)
@@ -146,7 +147,6 @@ fromkya = 17
 tokya = 2
 step = 40
 
-
 if (len(sys.argv)>1):
   adjthresh = int(sys.argv[1])
 if (len(sys.argv)>2):
@@ -173,6 +173,7 @@ densities=population_data.density_array
 
 preedges = loadadjfromfile(adjfile)
 adjlist = makeadjlist(len(lon),preedges)
+mobdf = readmobility()
 
 numquarters = 6084
 first = int(numquarters-1 - fromkya*40)
@@ -187,7 +188,8 @@ clustertrace['clusterid'] = []
 for ix in range(first,last,step):
    ya = (numquarters - ix)*25
    print(ix,"(",ya,"years ago )")
-   clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities)
+   mobfactor = getmobility(mobdf,ya)
+   clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor)
    caption = str(ya) + " years ago"
    ix0 = f'{counter:02d}'+'-'
    filename = "PLOTS/world"+ix0+str(ya)+"ya.png"
