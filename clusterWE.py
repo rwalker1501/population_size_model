@@ -29,7 +29,7 @@ def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor):
 #            print(p,len(queue))
             for j in adjlist[p]:
                sq = densities[ix][p]*densities[ix][j]
-               if sq >= productthresh*mobfactor:
+               if sq*mobfactor >= productthresh:
                   if (not visited[j]):
                      visited[j] = True
                      clusters[clustercount].append(j)
