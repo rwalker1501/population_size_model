@@ -139,8 +139,8 @@ productthresh = 20000000
 #fromkya = 36.4
 #tokya = 36
 #step = 1
-fromkya = 120
-tokya = 0
+fromkya = 17
+tokya = 2
 step = 40
 
 
@@ -153,9 +153,9 @@ if (len(sys.argv)>3):
 if (len(sys.argv)>4):
   tokya = int(sys.argv[4])
 
-adjfile = "population_data/all-adj.txt"
+adjfile = "population_data/all-adj-small.txt"
 if adjthresh == 300:
-   adjfile = "population_data/all-adj300.txt"
+   adjfile = "population_data/all-adj-small300.txt"
 
 print("Parameters")
 print(" ---")
@@ -164,9 +164,13 @@ print(" From (kiloyears ago)", fromkya)
 print(" To   (kiloyears ago)", tokya)
 print()
  
-lon=population_data.lon_array
-lat=population_data.lat_array
+lonworld=population_data.lon_array
+latworld=population_data.lat_array
 densities=population_data.density_array
+lldf = pd.DataFrame({'lon':lonworld,'lat':latworld})
+filterdf = lldf[(lldf['lat']>31) & (lldf['lat']<62) & ((lldf['lon']>353) | (lldf['lon']< 60))]
+lon = list(filterdf['lon'])
+lat = list(filterdf['lat'])
 
 preedges = loadadjfromfile(adjfile)
 adjlist = makeadjlist(len(lon),preedges)
@@ -197,7 +201,7 @@ for ix in range(first,last,step):
    clustercolors = getcolors(clusters,colortags)
    printclusters(clusters,clustercolors,densities,ix)
    addtrace(clustertrace,counter,ya,clusters,clustercolors,densities,ix)
-   plotworldclusters(clusters,clustercolors,lon,lat,filename,caption)
+   plotWEclusters(clusters,clustercolors,lon,lat,filename,caption)
    oldtags = colortags
    counter = counter + 1
 
