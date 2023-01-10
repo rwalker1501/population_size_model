@@ -53,6 +53,7 @@ def printclusters(clusters,colors,densities,ix):
    print()
 
 def addtrace(clustertrace,counter,ya,clusters,colors,densities,ix):
+   singletonpop = 0
    strya = str(ya)+'ya'
    clustertrace[strya] = [0]*len(clustertrace['clusterid'])
    n = len(clusters)
@@ -69,6 +70,9 @@ def addtrace(clustertrace,counter,ya,clusters,colors,densities,ix):
                clustertrace[key].append(0)
             clustertrace['clusterid'][id]=id
          clustertrace[strya][id] = pop
+      else:
+         singletonpop = singletonpop + densities[ix][c[0]]
+   return singletonpop
 
 def tagclusters(clusters,n,popix):
    tags = [-1]*n
@@ -185,10 +189,13 @@ counter = 1
 images = []
 clustertrace = {}
 clustertrace['clusterid'] = []
+spops = {}
+stryas = []
 for ix in range(first,last,step):
    ya = (numquarters - ix)*25
    print(ix,"(",ya,"years ago )")
    mobfactor = getmobility(mobdf,ya)
+   # mobfactor = 1
    clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor)
    caption = str(ya) + " years ago"
    ix0 = f'{counter:02d}'+'-'
@@ -201,12 +208,20 @@ for ix in range(first,last,step):
       colortags = resolvetags(temptags,oldtags,clusters,densities[ix])
    clustercolors = getcolors(clusters,colortags)
    printclusters(clusters,clustercolors,densities,ix)
-   addtrace(clustertrace,counter,ya,clusters,clustercolors,densities,ix)
+   spop = addtrace(clustertrace,counter,ya,clusters,clustercolors,densities,ix) 
+   strya = str(ya)+'ya'
+   stryas.append(strya)
+   spops[strya] = spop
+   # print(strya,spop)
    plotWEclusters(clusters,clustercolors,lon,lat,filename,caption)
    oldtags = colortags
    counter = counter + 1
 
+# add row of singleton totals
+clustertrace['clusterid'].append(-1)
+for s in stryas:
+   clustertrace[s].append(spops[s])
 df = pd.DataFrame(clustertrace)
-df.to_csv("trace.csv")
+df.to_csv("trace.csv",index = False)
 
 animate(images,"PLOTS/movie.mp4")
