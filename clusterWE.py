@@ -136,16 +136,19 @@ population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjthresh = 150 # change to 300 if you want more adjacencies
-productthresh = 20000000
+productthresh = 300000000
 #fromkya = 36.4
 #tokya = 36
 #step = 1
 #fromkya = 120
 #tokya = 0
 #step = 40
-fromkya = 17
+fromkya = 37
 tokya = 2
-step = 40
+#step = 40
+#changed to give greater granularity
+step=20
+withoutMobility=False
 
 if (len(sys.argv)>1):
   adjthresh = int(sys.argv[1])
@@ -188,7 +191,10 @@ clustertrace['clusterid'] = []
 for ix in range(first,last,step):
    ya = (numquarters - ix)*25
    print(ix,"(",ya,"years ago )")
-   mobfactor = getmobility(mobdf,ya)
+   if withoutMobility:
+       mobfactor=1
+   else:
+       mobfactor = getmobility(mobdf,ya)
    clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor)
    caption = str(ya) + " years ago"
    ix0 = f'{counter:02d}'+'-'
@@ -208,5 +214,6 @@ for ix in range(first,last,step):
 
 df = pd.DataFrame(clustertrace)
 df.to_csv("trace.csv")
+filename="PLOTS/movie th= "+str(productthresh)+' interpolated.mp4'
 
-animate(images,"PLOTS/movie.mp4")
+animate(images,filename)
