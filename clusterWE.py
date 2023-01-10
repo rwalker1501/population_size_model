@@ -140,16 +140,16 @@ population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjthresh = 150 # change to 300 if you want more adjacencies
-productthresh = 20000000
+productthresh = 300000000
 #fromkya = 36.4
 #tokya = 36
 #step = 1
 #fromkya = 120
 #tokya = 0
 #step = 40
-fromkya = 17
+fromkya = 37
 tokya = 2
-step = 40
+step = 20
 
 if (len(sys.argv)>1):
   adjthresh = int(sys.argv[1])
