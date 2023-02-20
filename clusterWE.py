@@ -9,8 +9,9 @@ from worldplotter import *
 from popdata import *
 import pandas as pd
 from mobility import *
+from elevation import *
 
-def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor):
+def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor,elev):
    n = len(adjlist)
    clustercount = 0
    clusters = []
@@ -29,7 +30,8 @@ def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor):
 #            print(p,len(queue))
             for j in adjlist[p]:
                sq = densities[ix][p]*densities[ix][j]
-               if sq*mobfactor >= productthresh:
+               elevdiff = abs(elev[i]-elev[j])
+               if (sq*mobfactor >= productthresh) and (elevdiff < 500):
                   if (not visited[j]):
                      visited[j] = True
                      clusters[clustercount].append(j)
@@ -174,6 +176,7 @@ print()
 lon=population_data.lon_array
 lat=population_data.lat_array
 densities=population_data.density_array
+elev=getelevationarray()
 
 preedges = loadadjfromfile(adjfile)
 adjlist = makeadjlist(len(lon),preedges)
@@ -196,7 +199,7 @@ for ix in range(first,last,step):
    print(ix,"(",ya,"years ago )")
    mobfactor = getmobility(mobdf,ya)
    # mobfactor = 1
-   clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor)
+   clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor,elev)
    caption = str(ya) + " years ago"
    ix0 = f'{counter:02d}'+'-'
    filename = "PLOTS/world"+ix0+str(ya)+"ya.png"
