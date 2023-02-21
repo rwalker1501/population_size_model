@@ -9,8 +9,9 @@ from worldplotter import *
 from popdata import *
 import pandas as pd
 from mobility import *
+from elevation import *
 
-def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor):
+def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor,elev):
    n = len(adjlist)
    clustercount = 0
    clusters = []
@@ -29,7 +30,9 @@ def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor):
 #            print(p,len(queue))
             for j in adjlist[p]:
                sq = densities[ix][p]*densities[ix][j]
-               if sq*mobfactor >= productthresh:
+               elevdiff = abs(elev[i]-elev[j])
+             #  if (sq*mobfactor >= productthresh) and (elevdiff < 500):
+               if (sq*mobfactor >= productthresh): #and elev[i] < 500 and elev[j]<500:
                   if (not visited[j]):
                      visited[j] = True
                      clusters[clustercount].append(j)
@@ -140,16 +143,16 @@ population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjthresh = 150 # change to 300 if you want more adjacencies
-productthresh = 300000000
+productthresh = 400000000
 #fromkya = 36.4
 #tokya = 36
 #step = 1
 #fromkya = 120
 #tokya = 0
 #step = 40
-fromkya = 37
+fromkya = 17
 tokya = 2
-step = 20
+step = 4
 
 if (len(sys.argv)>1):
   adjthresh = int(sys.argv[1])
@@ -174,6 +177,7 @@ print()
 lon=population_data.lon_array
 lat=population_data.lat_array
 densities=population_data.density_array
+elev=getelevationarray()
 
 preedges = loadadjfromfile(adjfile)
 adjlist = makeadjlist(len(lon),preedges)
@@ -196,7 +200,7 @@ for ix in range(first,last,step):
    print(ix,"(",ya,"years ago )")
    mobfactor = getmobility(mobdf,ya)
    # mobfactor = 1
-   clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor)
+   clusters = clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor,elev)
    caption = str(ya) + " years ago"
    ix0 = f'{counter:02d}'+'-'
    filename = "PLOTS/world"+ix0+str(ya)+"ya.png"
