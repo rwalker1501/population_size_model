@@ -13,15 +13,15 @@ potteryfilename = "cardium.txt"
 def savehexagons(indexes,outfile = potteryfilename):
     with open(outfile,'w') as f:
         for x in indexes:
-            # print(>> f, x)
-            print(x, end="\n", file=f)
+            # print(>> f, x, lon[x], lat[x])
+            print(x,lon[x],lat[x], end="\n", file=f)
 
 def loadhexagons(infile = potteryfilename):
     indexes = []
     if path.isfile(infile):
         with open(infile) as f:
              for x in f.read().splitlines():
-                 indexes.append(x)
+                 indexes.append(x.split()[0])
     return indexes
 
 def clip(df):
