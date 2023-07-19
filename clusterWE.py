@@ -31,9 +31,11 @@ def clusterworld(lon,lat,adjlist,ix,productthresh,densities,mobfactor,elev):
             for j in adjlist[p]:
                sq = densities[ix][p]*densities[ix][j]
                elevdiff = abs(elev[i]-elev[j])
-               if (sq*mobfactor >= productthresh) and (elevdiff < elevthresh):
+             #  if (sq*mobfactor >= productthresh) and (elevdiff < elevthresh):
              # I tested this function but results do not look good
-             #  if (sq*mobfactor >= productthresh) and elev[i]<elevthresh and elev[j]<elevthresh:
+             #this one has no effect of elevation
+               if (sq*mobfactor >= productthresh): 
+              # if (sq*mobfactor >= productthresh) and elev[j]<elevthresh:
                   if (not visited[j]):
                      visited[j] = True
                      clusters[clustercount].append(j)
@@ -144,18 +146,18 @@ population_data_name='Eriksson'
 population_data=load_population_data_source(base_path, population_data_name)
 
 adjthresh = 150 # change to 300 if you want more adjacencies
-productthresh = 400000000
+productthresh = 450000000
 #added parametrization
-elevthresh=500
+elevthresh=750
 #fromkya = 36.4
 #tokya = 36
 #step = 1
 #fromkya = 120
 #tokya = 0
 #step = 40
-fromkya = 17
+fromkya = 16
 tokya = 2
-step = 4
+step = 8
 
 if (len(sys.argv)>1):
   adjthresh = int(sys.argv[1])
