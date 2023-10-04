@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from elevation import *
 import os.path as path
 
-potteryfilename = "cardium.txt"
+potteryfilename = "cardium2.txt"
 
 def savehexagons(indexes,outfile = potteryfilename):
     with open(outfile,'w') as f:
