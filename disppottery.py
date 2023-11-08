@@ -51,7 +51,7 @@ def angle(neighbor,center):
     denom = math.sqrt(pointx*pointx+pointy*pointy)
     angle = np.arccos(num/denom)
     angle = 180*angle/math.pi
-    print(f"{angle:.2f},{pointx:.2f},{pointy:.2f}")
+#    print(f"{angle:.2f},{pointx:.2f},{pointy:.2f}")
     if pointy < 0:
        angle = 360-angle
     return angle
@@ -128,15 +128,18 @@ def arrange(cells,center):
     return sortedcells
 
 def displaywithneighbors(center,neighbors):
-     nb = arrange(neighbors,center)
-     print("----------------------------------")
-     print(f"      {dd(nb[0])}         {dd(nb[1])}")
-     print(f"      {ee(nb[0])}         {ee(nb[1])}")
-     print(f"{dd(nb[5])}         {dd(center)}      {dd(nb[2])}")
-     print(f"{ee(nb[5])}         {ee(center)}      {ee(nb[2])}")
-     print(f"      {dd(nb[4])}         {dd(nb[3])}")
-     print(f"      {ee(nb[4])}         {ee(nb[3])}")
-     print("----------------------------------")
+    nb = arrange(neighbors,center)
+    print("----------------------------------")
+    print(f"      [{nb[0]}]         [{nb[1]}]")
+    print(f"      {dd(nb[0])}         {dd(nb[1])}")
+    print(f"      {ee(nb[0])}         {ee(nb[1])}")
+    print(f"[{nb[5]}]         [{center}]      [{nb[2]}]")
+    print(f"{dd(nb[5])}         {dd(center)}      {dd(nb[2])}")
+    print(f"{ee(nb[5])}         {ee(center)}      {ee(nb[2])}")
+    print(f"      [{nb[4]}]         [{nb[3]}]")
+    print(f"      {dd(nb[4])}         {dd(nb[3])}")
+    print(f"      {ee(nb[4])}         {ee(nb[3])}")
+    print("----------------------------------")
 
 def onclick(event):
     if event.button == 1:
@@ -202,8 +205,8 @@ lon=population_data.lon_array
 lat=population_data.lat_array
 
 adjfile = "population_data/all-adj.txt"
-densities=population_data.density_array
-elev=getelevationarray()
+densities = population_data.density_array
+elev = getelevationarray()
 preedges = loadadjfromfile(adjfile)
 adjlist = makeadjlist(len(lon),preedges)
 mobdf = readmobility()
