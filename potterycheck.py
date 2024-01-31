@@ -9,8 +9,9 @@ import matplotlib.pyplot as plt
 from elevation import *
 from mobility import *
 import os.path as path
+from matplotlib.widgets import TextBox
 
-initcenter = 7944
+center = 7944
 potteryfilename = "cardium.txt"
 kya = 8
 numquarters = 6084
@@ -158,14 +159,27 @@ def displaywithneighbors(center,neighbors):
     print("----------------------------------")
 
 def onclick(event):
-    if event.button == 1:
-        x = event.xdata
-        y = event.ydata
-#        print(f"x={x:.2f},y={y:.2f}")
-        p = nearestnode(x,y,lon,lat)
-#        print(f"lon={lon[p]:.2f},lat={lat[p]:.2f}")
-        redraw(p)
-        displaywithneighbors(p,adjlist[p])
+    if event.inaxes is not None and event.inaxes == pbox:
+#        print("p Textbox clicked")
+        ptextbox.set_active(True)
+    elif event.inaxes is not None and event.inaxes == ebox:
+#        print("e Textbox clicked")
+        etextbox.set_active(True)
+    else:
+        if event.button == 1:
+            x = event.xdata
+            y = event.ydata
+    #        print(f"x={x:.2f},y={y:.2f}")
+            global center
+            center = nearestnode(x,y,lon,lat)
+    #        print(f"lon={lon[p]:.2f},lat={lat[p]:.2f}")
+            redraw(center)
+            displaywithneighbors(center,adjlist[center])
+
+pbox = None
+ptextbox = None
+ebox = None
+etextbox = None
 
 def redraw(centerindex):
     mapper = [0]*len(lon)
@@ -212,14 +226,36 @@ def redraw(centerindex):
     for color, label in color_meanings.items():
         plt.scatter([], [], c=color, s=100, label=label)
     plt.legend(loc='upper right')
+    global pbox
+    global ptextbox
+    global ebox
+    global etextbox
+    pbox = plt.axes([0.24, 0.83, 0.15, 0.04])
+    ptextbox = TextBox(pbox, 'product:', initial=str(productthresh))
+    ptextbox.on_submit(update_pthresh)
+    ebox = plt.axes([0.24, 0.78, 0.15, 0.04])
+    etextbox = TextBox(ebox, 'elevation:', initial=str(elevthresh))
+    etextbox.on_submit(update_ethresh)
+
     plt.draw()
+
 
 def plotWE():
     fig = plt.figure()
     fig.canvas.mpl_connect('button_press_event',onclick)
-    redraw(initcenter)
+    redraw(center)
     plt.show()
     plt.close()
+
+def update_pthresh(text):
+    global productthresh
+    productthresh = int(text)
+    redraw(center)
+
+def update_ethresh(text):
+    global elevthresh
+    elevthresh = int(text)
+    redraw(center)
 
 base_path=''
 population_data_name='Eriksson'
